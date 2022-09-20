@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Más arreglos</title>
+</head>
+<body>
+    <script>
+        nombres = []
+
+        do{
+            do {
+                var nombre = prompt(`Introduzca el nombre del cliente ${nombres.length + 1}`)
+                if (nombre == null || nombre.trim() == "")
+                    alert("Debe escribir el nombre. Intente de nuevo")
+            } while (nombre == null || nombre.trim() == "");
+        
+        if(nombres.length == 0 || confirm("Desea agregarlo al final?"))
+            nombres.push(nombre)
+        else
+            nombres.unshift(nombre)
+        }while(confirm("Otro?"))
+
+        alert(`Los nombres introducidos son: \n${nombres.join("\n")}`)
+
+        n = parseInt(prompt("Introduzca la cantidad de invitados "))
+
+        invitados = []
+        for (i=0;i<n;i++)
+            invitados.push(prompt(`Nombre del invitado ${i+1}/${n}`))
+
+        posicion = prompt(`Introduzca la posición donde quiere incluir a los invitados:`)
+        for (i=0;i<n;i++)
+            // insertando cada elmento del arreglo invitados en el arreglo nombres
+            // en la posición indicada por el usuario
+            nombres.splice(posicion,0,invitados[i])
+
+        console.log(`La lista completa de nombres es \n${nombres.join("\n")}`)
+    </script>
+</body>
+</html>

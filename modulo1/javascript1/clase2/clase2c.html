@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Practicando con alert, confirm y prompt</h1>
+</body>
+<script>
+    const EDAD_MINIMA = 18;
+    const EDAD_MAXIMA = 90;
+
+    const SUELDO_MINIMO = 50;
+    const SUELDO_MAXIMO = 1000;
+    
+    var edad = Math.random()*(EDAD_MAXIMA-EDAD_MINIMA) + EDAD_MINIMA
+    var sueldo = Math.random()*(SUELDO_MAXIMO-SUELDO_MINIMO) + SUELDO_MINIMO
+
+    // se le pide al usuario que introduzca un valor de entrada
+    // o si hizo click en Aceptar sin escribir nada
+    var nombre = prompt("Introduzca el nombre:")
+
+    // se verifica si el usuario hizo click en el botón cancelar
+    if (nombre == null || nombre == "")
+        alert(`Hizo click en cancelar o no escribió ningún nombre. Debe escribir el nombre para procesar, recargue la página`)
+    else{
+        var salida1 = `Su nombre es ${nombre} y su sueldo base es ${sueldo.toFixed(2)}$`
+
+        alert(salida1)
+        console.info(salida1)
+
+        var casado = confirm("Está casado? Haga click en Aceptar en caso afirmativo")
+        var porcBono = 0;
+        var nuevoSueldo;
+
+        // si el usuario le dió click en Aceptar en el confirm
+        if(casado){ // if(casado == True)
+            porcBono = 0.25
+            console.info(`Por estar casado tendrá un bono del ${porcBono*100}%`)
+            alert(`Por estar casado tendrá un bono del ${porcBono*100}%`)
+        }else{
+            porcBono = 0.1
+            console.info(`Por NO estar casado tendrá un bono del ${porcBono*100}%`)
+            alert(`Por NO estar casado tendrá un bono del ${porcBono*100}%`)
+        }
+
+        // si la edad es menor a 30, el bonoEdad es 25, sino es 50
+        var bonoEdad = (edad < 30) ? 25 : 50;
+
+        alert(edad == 30 ? `Tiene 30 años` : `No tiene 30 años`)
+
+        nuevoSueldo = sueldo + sueldo*porcBono
+
+        console.log(`El sueldo original era ${sueldo.toFixed(2)}, el nuevo sueldo es ${nuevoSueldo.toFixed(2)}$`)
+        
+        alert(`El sueldo original era ${sueldo.toFixed(2)}, el nuevo sueldo es ${nuevoSueldo.toFixed(2)}$`)
+    }
+</script>
+</html>

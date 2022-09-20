@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Práctica de condicionales</title>
+</head>
+<body>
+    <h1>Ejercicios de Condicionales</h1>
+</body>
+<script>
+    const EDAD_MINIMA = 18;
+    const EDAD_MAXIMA = 90;
+    const SUELDO_MINIMO = 50;
+    const SUELDO_MAXIMO = 1000;
+
+    var edad = Math.random()*(EDAD_MAXIMA-EDAD_MINIMA) + EDAD_MINIMA
+    var sueldo = Math.random()*(SUELDO_MAXIMO-SUELDO_MINIMO) + SUELDO_MINIMO
+    var porcAumento;
+
+    console.log(`La edad del trabajador es ${edad.toFixed(0)} años`)
+
+    if (edad > 50){
+        // ambas instrucciones se ejecutaran solo si edad > 50
+        porcAumento = 0.1;
+        console.log(`El trabajador es mayor a 50 años. Le toca un aumeto de 10%`)
+    }else {
+        porcAumento = 0
+        console.log(`No le toca aumento de ningún tipo`)
+    }
+
+    var aumento = sueldo*porcAumento;
+    sueldo += aumento
+
+    console.log(`El aumento del sueldo será de ${aumento}$`)
+    console.log(`El nuevo sueldo es ${sueldo}$`)
+
+</script>
+</html>

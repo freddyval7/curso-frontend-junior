@@ -1,0 +1,221 @@
+*{
+    font-family: "Segoe UI",SegoeUI,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    background-color: #FFFFFF;
+}
+
+body{
+    margin: 0;
+    height: 200vh;
+}
+
+/* HEADER */
+header{
+    height: 50px;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+#div1{
+    margin-left: 20px;
+    float: left;
+}
+
+.liUlHeader1{
+    display: inline-block;
+    margin-left: 20px;
+    font-size: small;
+    position: relative;
+    top: -42.5px;
+    left: 100px;
+}
+
+#visual{
+    border-left: solid 2px black;
+    padding-left: 30px;
+    font-size: medium;
+}
+
+#div2{
+    float: right;
+    margin-right: 50px;
+    position: relative;
+    top: -10px;
+}
+
+.liUlHeader2{
+    display: inline-block;
+    margin-left: 30px;
+    font-size: small;
+}
+
+#sign{
+    width: 30px;
+    float: right;
+    margin-left: 15px;
+    position: relative;
+    top: -5px;
+}
+
+#buscar{
+    width: 15px;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+#imgLogo{
+    width: 130px;
+}
+
+#soporte{
+    text-decoration: none;
+    color: black;
+}
+#soporte:hover{
+    visibility: hidden;
+}
+
+/* MAIN */
+main{
+    width: 200px;
+    height: 200px;
+}
+
+h1{
+    float: left;
+    font-size: 80px;
+    position: relative;
+    top: -50px;
+    font-weight: 600;
+}
+
+/* Cuadrado contenedor */
+#divMain{
+    background-color: #DCD4F6;
+    padding: 5%;
+    margin: 0px 150px 0px 150px;
+    border-color: #E9E1F6;
+    border-style: solid;
+    border-width: 10px;
+    border-radius: 0.5rem;
+    height: 400px;
+}
+
+#imgVisual{
+    width: 100px;
+    background-color: #DCD4F6;
+}
+
+/* CONTENEDORES */
+.divSection{
+    background-color: #DCD4F6;
+    width: 15%;
+    height: 250px;
+    display: inline-block;
+    color: black;
+    margin-right: 50px;
+    position: relative;
+    top: -80px;
+}
+
+#divVersion{
+    background-color: #DCD4F6;
+    display: inline-block;
+}
+
+#windowsLogo{
+    border-right: solid 1px black;
+    padding-right: 8px;
+    background-color: #DCD4F6;
+}
+
+#version{
+    position: relative;
+    top: -8px;
+    left: 30px;
+}
+
+.divSection p{
+    margin-top: -15px;
+}
+
+.divDivSection{
+    background-color: #35294F;
+    padding: 10px;
+    color: white;
+    width: 65%;
+    text-align: center;
+}
+.divDivSection h3{
+    background-color: #35294F;
+}
+
+#h3Div{
+    width: 150px;
+    position: relative;
+    top: 40px;
+}
+
+.pDiv{
+    width: 200px;
+}
+
+#divSection2{
+    position: relative;
+    top: -135px;
+}
+
+#divSection3{
+    position: relative;
+    top: -173px;
+}
+
+#divSection3 .separador{
+    height: 5px;
+}
+
+#divSection4{
+    position: relative;
+    top: -178px;
+}
+
+#preview{
+    border-left: solid 1px black;
+    padding-left: 30px;
+    background-color: #DCD4F6;
+    position: relative;
+    top: -130px;
+}
+
+#preview .separador{
+    height: 25px;
+}
+
+p,h3{
+    background-color: #DCD4F6;
+}
+
+/* Boton de comentario con el lapiz */
+#botonComent{
+    width: 130px;
+    height: 50px;
+    transform: rotate(-90deg);
+    background-color: #106EBE;
+    color: white;
+    position: fixed;
+    right: -40px;
+    float: right;
+}
+
+#botonComent p{
+    background-color: #106EBE;
+    margin-left: 5px;
+}
+
+#lapiz{
+    width: 25px;
+    float: right;
+    position: relative;
+    top: -40px;
+    left: -5px;
+    background-color: #106EBE;
+}

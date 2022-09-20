@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practicando con arreglos: parte 2</title>
+</head>
+<body>
+    <script>
+        // se define arreglo vacio
+        var arrNombres = []
+        var arrNotas = []
+
+        do{
+            var nombre = prompt(`Introduzca el nombre del alumno ${arrNombres.length+1} `);
+            
+            // se convierte a mayúsculas para que pueda ser encontrado aunque el usuario
+            // escriba nombres en mayúsculas o mínusculas
+
+            nombre = nombre.toUpperCase()
+            if (arrNombres.includes(nombre))
+                alert(`El alumno ${nombre} ya está incluido en la sección. Intente de nuevo`)
+            else{
+            var nota = prompt(`Introduzca la nota del alumno ${arrNombres.length+1} `);
+
+            // se agrega el nombre leido al arreglo
+            arrNombres.push(nombre.toUpperCase())
+            arrNotas.push(parseInt(nota))
+            }
+        }while (confirm("¿Desea registrar a otro alumno?"))
+
+        console.log("Los alumnos registrados fueron ")
+        for (i=0;i<arrNombres.length;i++)
+            console.log(`${i+1}.- ${arrNombres[i]}. Nota:  ${arrNotas[i]}`) 
+    </script>
+</body>
+</html>

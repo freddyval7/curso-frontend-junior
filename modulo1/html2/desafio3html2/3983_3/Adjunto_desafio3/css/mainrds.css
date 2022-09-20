@@ -1,0 +1,213 @@
+body
+{
+	font-family: 'Roboto Slab', serif;
+}
+p
+{
+	font-family: 'Roboto', sans-serif;
+}
+section:nth-child(2)
+{
+	text-align: center;
+	background: #f4f5f4;
+
+}
+section:nth-child(2) , section:nth-child(3)
+{
+	padding: 3em 0;
+}
+div[class=col-md-3] > span + h2
+{
+	font-size: 1.3em;
+	margin-bottom: 2em;
+	font-weight: 400;
+}
+span ~ h2
+{
+	font-size: 3em;
+	font-weight: 700;
+	color: #0056b8;
+	margin-bottom: .5em;
+}
+h2 ~ span
+{
+	width: 70%;
+	margin: 0 auto;
+	margin-bottom: 4em;
+}
+div[class=col-md-3] > span
+{
+	font-size: 4em;
+	border-radius: 50%;
+	border: 1px solid #E2EAEC;
+	padding: 1em;
+	color: #f6d93c;
+}
+div[class=col-md-3]:hover > span
+{
+	color: #fff;
+	background: #0056B8;
+	border: 1px solid #fff;
+	transition: all .8s ease;
+}
+div[class=col-md-3]
+{
+	cursor: pointer;
+}
+section:nth-child(3)
+{
+	background: #0056b8;
+	color: #fff;
+	padding: 2em 0;
+	
+}
+#empresa div > p
+{
+	font-size: 1.4em;
+}
+#empresa .filosofia
+{
+	text-align: center;
+	margin-top: 2em;
+	
+	padding-top: 3em;
+}
+#empresa .filosofia p
+{
+	font-size: 1.3em;
+}
+p + h3 , #empresa div > h2
+{
+	color: #f6d93c;
+	font-weight: 700;
+}
+#empresa div[class=col-md-12] > h2
+{
+	font-size: 2.5em;	
+	margin: 1em 0;
+	text-align: center;
+}
+header
+{
+	left: 0;
+	padding: 2em 0;
+	position: absolute;
+	right: 0;
+	text-align: center;
+	z-index: 9;
+}
+#mapa
+{
+	background: #e7e9e8;
+	text-align: center;
+}
+.panel-body
+{
+	padding: 3em;
+}
+#consulta
+{
+	padding: 2em 0;
+}
+#consulta , #contacto
+{
+	text-align: center;
+	margin: 3em 0;
+}
+div > h2:first-child
+{
+	font-size: 3em;
+	font-weight: 700;
+	color: #0056b8;
+	margin-bottom: .5em;
+}
+.contacto
+{
+	font-size: 1.5em;
+}
+h2 + p
+{
+	margin-bottom: 2em;
+}
+.btn-default
+{
+	background: #0056B8;
+	color: #fff;
+	text-transform: uppercase;
+	border: none;
+	padding: 1em 2em;
+	margin-top: 1em;
+
+}
+#contacto
+{
+	background: #F6D93C;
+	padding: 4em 0;
+}
+#contacto div[class=col-md-4] > span
+{
+	font-size: 3em;
+	margin: 1em 0;
+	color: #fff;
+}
+#contacto div[class=col-md-12] > h2
+{
+	font-size: 3em;
+	font-weight: 700;
+	color: #0056b8;
+	margin-bottom: .5em;
+}
+footer
+{
+	text-align: center;
+}
+nav > ul > li
+{
+	text-transform: uppercase;
+	margin-top: 2em;
+}
+a[href="#"]
+{
+
+	padding: .8em 1.3em;
+
+}
+a[href="#"]:hover
+{ 
+	background: #0056b8;
+	color: #fff;
+	border-radius: .5em;
+	text-decoration: none;
+}
+/* OBJETIVO 1: */
+#sliders div > img
+{
+	border-bottom: 10px solid #F6D93C;
+	width: 100%;
+}
+footer
+{
+	font-weight: 300;
+	position: relative;
+}
+footer ul
+{
+	font-size: 1.5em;
+	margin: 2em 0;
+}
+footer li
+{
+	text-decoration: underline;
+	margin: 0 1em;
+	color: #666;
+}
+#btn-subir
+{
+	position: fixed;
+	right: 1em;
+	bottom: 1em;
+	z-index: 9999;
+	top: inherit;
+	font-size: 4em;
+	cursor: pointer;
+}

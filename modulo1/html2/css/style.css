@@ -1,0 +1,310 @@
+
+*{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body{
+    margin: 0;
+}
+
+a{
+    text-decoration: none;
+    color: #FFFFFF;
+}
+/* HEADER */
+
+header{
+    background-color: #171A21;
+    height: 100px;
+    padding: 0px 18% 25px;
+    box-sizing: border-box;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+#primerDivHeader{
+    height: 25px;
+}
+
+#ulHeaderSup{
+    color: #FFFFFF;
+    margin:0;
+    float: right;
+}
+
+.liUlHeaderSup{
+    display: inline-block;
+    margin-left: 18px;
+}
+
+#instalarSteam{
+    padding: 5px 10px;
+    background-color: rgb(92, 126, 16);
+}
+#idioma{
+    border-left: solid 1px #FFFFFF;
+    padding-left: 15px;
+}
+
+#imgLogo{
+    width: 176px;
+}
+
+#ulHeader{
+    position: relative;
+    top: -15px;
+    display: inline-block;
+}
+
+.liUlHeader{
+    display: inline-block;
+    text-transform: uppercase;
+    margin-left: 10px;
+}
+
+/* MAIN */
+main{
+    padding: 50px 18% 25px;
+    background-color: #1A2A3B;
+    height: 300vh;
+}
+
+/* Section: Ofertas especiales */
+
+.divOfertaV{
+    width: 30%;
+    height: 390px;
+    display: inline-block;
+    color: white;
+    margin-right: 10px;
+}
+
+.imgOfertaV{
+    width: 100%;
+    height: 320px;
+}
+
+.divDivOfertaV{
+    background-image: url("https://store.akamai.steamstatic.com/public/images/v6/home/background_spotlight.jpg");
+    height: 70px;
+    padding: 10px;
+    box-sizing: content-box;
+    position: relative;
+    top: -5px;
+}
+
+.h4Oferta{
+    margin-top: 0;
+}
+
+/* Segundo DIV - Práctica de position: absolute, display:none y visibility: hidden */
+/* #segundoDiv:hover{
+    position: absolute;
+} */
+
+/* #segundoDiv{
+    display: none;
+} */
+
+/* #segundoDiv{
+    visibility: hidden;
+} */
+
+/* Tercer div */
+#tercerDiv{
+    position: relative;
+    top: -25px;
+}
+
+#secondParH{
+    position: relative;
+    top: 19px;
+}
+
+.divOfertaH{
+    height: 49%;
+}
+
+.imgOfertaH{
+    width: 100%;
+    height: 156px;
+}
+
+.divDivOfertaH{
+    height: 39px;
+    background-color: #ADDAF4;
+    color: black;
+}
+
+.pOfertaH{
+    margin: 0;
+}
+
+/* Section: EXPLORAR */
+section[id] > h4:first-child{
+    margin-bottom: 5px;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+section[id="explorar"] > div{
+    background: rgb(6,191,255);
+    background: linear-gradient(90deg, rgba(6,191,255,1) 0%, rgba(18,170,255,1) 50%, rgba(43,120,255,1) 100%);
+    height: 58px;
+    width: 24%;
+    display: inline-block;
+    border-radius: 5px;
+    text-align: center;
+    padding: 15px 10px;
+    box-sizing: border-box;
+}
+
+section[id="explorar"] > div:hover{
+    background: rgb(160, 220, 240);
+    background: linear-gradient(90deg, rgba(6,191,255,1) 0%, rgb(60, 178, 247) 50%, rgba(43,120,255,1) 100%);
+    cursor: pointer;
+}
+
+/* section[id="explorar"] > div:last-of-type{
+    padding: 10px 10px;
+} */
+
+h4 ~ div > span{
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+/*SECTION: RV*/
+#rv > div{
+    width: 24%;
+    height: 135px;
+    display: inline-block;
+}
+
+#rv > div > div:first-child{
+    height: 80%;
+}
+
+#rv > div > div:first-child img{
+    height: 100%;
+    width: 100%;
+}
+
+#rv> div > div:last-child{
+    height: 20%;
+    background: rgb(56,107,135);
+    background: linear-gradient(90deg, rgba(56,107,135,1) 0%, rgba(86,134,168,1) 50%, rgba(108,153,177,1) 100%);
+}
+
+#rv> div > div:last-child ul{
+    margin: 0;
+    text-align: right;
+}
+
+#rv> div > div:last-child ul li{
+    list-style: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 0;
+}
+
+#rv> div > div:last-child ul li:first-child{
+    background-color: rgb(92, 126, 16);
+    color: aliceblue;
+}
+
+#rv> div > div:last-child ul > li:nth-child(2){
+    background-color: #305870;
+    color: rgb(66, 65, 65);
+    text-decoration: line-through;
+}
+
+#rv> div > div:last-child ul > li:last-of-type{
+    background-color: #305870;
+    color: #ADDAF4; 
+    padding: 0 4px;
+}
+
+/*SECTION: PRUEBA*/
+#prueba{
+    margin-top: 45px;
+}
+#prueba > h4{
+    margin-bottom: 5px;
+}
+#prueba div{
+    width: 24.5%;
+    height: 225px;
+    display: inline-block;
+    border-radius: 10px;
+    box-sizing: border-box;
+    padding: 30px 0;
+    vertical-align: middle;
+}
+#prueba > div:hover{
+    cursor: pointer;
+    box-shadow: 0 5px 5px 1px rgb(231, 207, 154);
+    transition: 0.3s ease;
+    transform: scale(1.05);
+}
+
+#prueba > div{
+    border: solid 1px rgb(233, 227, 214);
+    background-size: cover;
+}
+#prueba > div:nth-of-type(1){
+    background-image: url(https://store.steampowered.com/categories/image/category/fighting_martial_arts?cc=us&l=spanish);
+}
+
+#prueba > div:nth-of-type(2){
+    background-image: url(https://store.steampowered.com/categories/image/category/science_fiction?cc=us&l=spanish);
+}
+
+#prueba > div:nth-of-type(3){
+    background-image: url(https://store.steampowered.com/categories/image/category/simulation?cc=us&l=spanish);
+}
+
+#prueba > div:nth-of-type(4){
+    background-image: url(https://store.steampowered.com/categories/image/category/multiplayer_coop?cc=us&l=spanish);
+}
+
+#prueba > div > div{
+    background: rgb(183,130,14);
+    background: linear-gradient(0deg, rgba(183,130,14,1) 0%, rgba(154,126,46,0) 100%);
+    width: 100%;
+    height: 120%;
+}
+
+#prueba > div > div > div > h3{
+    color: white;
+    font-weight: bolder;
+    width: 200px;
+    text-align: center;
+    margin: 0 auto;
+    position: relative;
+    top: 40%;
+    left: 60%;
+    text-shadow: 0 3px 5px rgb(58, 57, 57);
+}
+
+/*TRANSITION*/
+/* transition: transform 2s ease; */
+
+/*recordar vertical-align*/
+
+/* #prueba > div:nth-child(1){
+    
+} */
+
+
+/* OVERFLOW */
+/* #overflow{
+    height: 100px;
+    border: 3px solid white;
+    color: white;
+    overflow: scroll;
+} */
+

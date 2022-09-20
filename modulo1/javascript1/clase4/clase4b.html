@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Más arreglos</title>
+</head>
+
+<body>
+    <h1>Practicando con los arreglos</h1>
+
+    <script src="otro.js"></script>
+    <script src="funciones.js"></script>
+
+    <script>
+        const MONTO = 100;
+
+        //debugger;
+        //holaMundo()
+        //saludar();
+
+        function holaMundo() {
+            alert("hola mundo")
+        }
+
+        function leerString(titulo, error) {
+            let texto;
+            do {
+                texto = prompt(titulo)
+                if (texto == null || texto.trim() == "")
+                    if (error != undefined)
+                        alert(error)
+                    else
+                        alert("No puede estar vacío")
+            } while (texto == null || texto.trim() == "");
+
+            return texto;
+        }
+        
+        function leerNombresClientes() {
+            do {
+                // declaracion local al scope del ciclo do..while
+                let nombre = leerString(`Introduzca el nombre del cliente ${nombres.length + 1}`,
+                    "Debe escribir el nombre. Intente de nuevo")
+
+                console.log(MONTO)
+
+                if (nombres.length == 0)
+                    // agrega un elemento al final del arreglo
+                    nombres.push(nombre)
+                else
+                    if (confirm("Desea agregarlo al final?"))
+                        nombres.push(nombre)
+                    else
+                        // agrega un elemento al comienzo del arreglo
+                        nombres.unshift(nombre)
+
+                // se unen en una cadena los valores del arreglo usando \n como separador
+                console.log(nombres.join("\n"))
+
+            } while (confirm("Otro?"))
+        }
+
+        function leerInvitados() {
+            let n = parseInt(prompt("Introduzca la cantidad de invitados "))
+            let invitados = []
+            for (let i = 0; i < n; i++) {
+                var invitado = leerString(`Nombre del invitado ${i + 1}/${n}`)
+                invitados.push(invitado)
+            }
+        }
+
+        function unirInvitadosAClientes() {
+            if (n > 0) {
+                let posicion = prompt(`Introduzca la posicion donde quiere incluir a los invitados `)
+                for (let i = 0; i < n; i++)
+                    // insertando cada elemento del arreglo invitados en el arreglo
+                    // nombres en la posicion indicada por el usuario
+                    nombres.splice(posicion, 0, invitados[i])
+
+                console.log(`La lista completa de nombres es \n${nombres.join("\n")}`)
+            }
+        }
+    </script>
+    <script>
+        "use strict";
+
+        // saludar()
+        let nombres = []
+
+        leerNombresClientes()
+        alert(`Los nombre introducidos son: \n${nombres.join("\n")}`)
+        //leerInvitados();
+        //unirInvitadosAClientes();
+
+        leerString("introduzca el apellido ")
+
+        holaMundo() // producira un error porque la funcion aun no esta definida
+
+    </script>
+
+</body>
+
+</html>

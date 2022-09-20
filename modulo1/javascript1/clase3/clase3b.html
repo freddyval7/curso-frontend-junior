@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 3: Practicando con los strings</title>
+</head>
+
+<body>
+    <script>
+        var n = 0;
+        var acumEdades = 0;
+        do {
+            do {
+                var nombre = prompt(`Introduzca el nombre del cliente ${n + 1}`)
+                if (nombre == null || nombre.trim() == "")
+                    alert("Debe escribir el nombre. Intente de nuevo")
+            } while (nombre == null || nombre.trim() == "");
+
+            do {
+                var apellido = prompt(`Introduzca el apellido del cliente ${n + 1}`)
+                if (apellido == null || apellido.trim() == "")
+                    alert("Debe escribir el apellido. Intente de nuevo")
+            } while (apellido == null || apellido.trim() == "");
+
+            do {
+                var edad = prompt(`Introduzca la edad del cliente ${n + 1}`)
+                if (edad == null || edad.trim() == "" || isNaN(edad))
+                    alert("Debe escribir la edad. Intente de nuevo")
+                else if (edad < 0 && edad > 100)
+                    alert("Debe escribir un número entre 0 y 100")
+            } while (edad == null || edad.trim() == "" || isNaN(edad))
+
+            edad = parseInt(edad);
+            acumEdades += edad;
+            if (edad >= 18)
+                alert("Es mayor de edad")
+            else
+                alert("Es menor de edad")
+
+            var nombreCompleto = nombre + " " + apellido;
+
+            alert(`Su nombre completo es ${nombreCompleto.toUpperCase()}`)
+        n++;
+        }while (confirm("Desea procesar otro ..?"))
+
+        promedio = acumEdades / n;
+        alert(`Se procesaron ${n} clientes y su promedio de edades es ${promedio.toFixed(2)} años`) 
+    </script>
+</body>
+
+</html>

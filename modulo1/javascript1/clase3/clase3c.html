@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introducción a los arreglos</title>
+</head>
+<body>
+    <script>
+        var diasSemana = ["Lunes","Martes","Miercoles","Jueves","Viernes"]
+        var asistencia = [0,0,0,0,0]
+
+        for(i=0;i<5;i++)
+            asistencia[i] = Math.round(Math.random()*150);
+
+        var acumAsistencias = 0;
+        var contMay100=0;
+        var diaMayorAsistencia = diasSemana[0];
+        var mayorAsistencia = asistencia[0]
+
+        for(i=0;i<5;i++){
+            acumAsistencias += asistencia[i]
+            if(asistencia[i]>mayorAsistencia){
+                mayorAsistencia = asistencia[i]
+                diaMayorAsistencia = diasSemana[i]
+            }
+            if(asistencia[i] > 100)
+                contMay100++;
+        }
+
+        var promedio = acumAsistencias/5;
+        var diasMenorAlPromedio = ""
+        for(i=0;i<5;i++){
+            if(asistencia[i] < promedio)
+            diasMenorAlPromedio += diaSemana[i]+","
+        }
+
+        for(i=0;i<5;i++)
+            console.log(`El día de la semana ${i+1} es ${diasSemana[i]}` + 
+            "y la asistencia fue de ${asistencia[i]} personas")
+        
+        console.warn(`El total de asistencias fue ${acumAsistencias}, el `+
+        `promedio de asistencia diaria fue de ${promedio.toFixed(2)},`+
+        `y en ${contMay100} hubieron más de 100 personas asistentes`)
+
+        console.warn(`El día de mayor asistencia fue ${diaMayorAsistencia}`)
+        console.warn(`Los días donde la asistencia fueron menor al promedio fueron ${diasMenorAlPromedio}`)
+    </script>
+</body>
+</html>

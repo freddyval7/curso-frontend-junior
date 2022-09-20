@@ -1,0 +1,3 @@
+function pedirNombre(){
+    prompt("Nombre: ")
+}

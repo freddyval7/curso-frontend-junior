@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practicando con funciones numéricas</title>
+</head>
+<body>
+    <h1>Funciones numéricas</h1>
+</body>
+<script>
+    const EDAD_MINIMA = 18;
+    const EDAD_MAXIMA = 90;
+    const SUELDO_MINIMO = 50;
+    const SUELDO_MAXIMO = 1000;
+
+    var edad = Math.random()*(EDAD_MAXIMA-EDAD_MINIMA) + EDAD_MINIMA
+    var sueldo = Math.random()*(SUELDO_MAXIMO-SUELDO_MINIMO) + SUELDO_MINIMO
+
+    console.log(`La edad del trabajador es ${edad.toFixed(0)} años (usando toFixed)`)
+    console.log(`La edad del trabajador es ${Math.round(edad)} años (usando round)`)
+    console.log(`El sueldo del trabajador es ${sueldo.toFixed(2)}$`)
+
+    //debugger;
+    edad += 10;
+
+    var porc_aumento = Math.random();
+    sueldo = sueldo + (sueldo*porc_aumento)
+
+    console.log(`La edad del trabajor es ${edad.toFixed(0)} años (usando toFixed)`)
+    console.log(`El sueldo aumentado del trabajador es ${sueldo.toFixed(2)}$`)
+    console.log(`El porcentaje de aumento fue de ${(100*porc_aumento).toFixed(2)}%`)
+</script>
+</html>

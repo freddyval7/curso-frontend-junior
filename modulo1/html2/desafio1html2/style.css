@@ -1,0 +1,95 @@
+*{
+    font-family: "Segoe UI",SegoeUI,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    background-color: #FFFFFF;
+}
+
+body{
+    margin: 0;
+}
+
+header{
+    height: 50px;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+#div1{
+    margin-left: 20px;
+    float: left;
+}
+
+.liUlHeader1{
+    display: inline-block;
+    margin-left: 20px;
+    font-size: small;
+    position: relative;
+    top: -42.5px;
+    left: 100px;
+}
+
+#visual{
+    border-left: solid 2px black;
+    padding-left: 30px;
+    font-size: medium;
+}
+
+#div2{
+    float: right;
+    margin-right: 50px;
+    position: relative;
+    top: -10px;
+}
+
+.liUlHeader2{
+    display: inline-block;
+    margin-left: 30px;
+    font-size: small;
+}
+
+#sign{
+    width: 30px;
+    float: right;
+    margin-left: 15px;
+    position: relative;
+    top: -5px;
+}
+
+#buscar{
+    width: 15px;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+#imgLogo{
+    width: 130px;
+}
+
+main{
+    width: 200px;
+    height: 200px;
+}
+
+h1{
+    float: left;
+    font-size: 80px;
+    position: relative;
+    top: -50px;
+    font-weight: 600;
+}
+
+#divMain{
+    background-color: #DCD4F6;
+    padding: 300px;
+    border-color: #E9E1F6;
+    border-style: solid;
+    border-width: 10px;
+    border-radius: 0.5rem;
+}
+
+#imgVisual{
+    width: 100px;
+    background-color: #DCD4F6;
+    position: relative;
+    top: -300px;
+    left: -300px;
+}
