@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styles.css">
+    <title>Desafio 2</title>
+</head>
+<script src="./js/funciones.js"></script>
+<body>
+    <header>
+        <h1>Desafio 2</h1>
+    </header>
+    <main>
+        <form name="alumnos">
+            Nombre: <input type="text" name="nombre"><br>
+            Nota Práctica 1: <input type="text" name="notaPract1"><br>
+            Nota Práctica 2: <input type="text" name="notaPract2"><br>
+            Nota Práctica 3: <input type="text" name="notaPract3"><br>
+            Nota Práctica 4: <input type="text" name="notaPract4"><br>
+            Nota Teórica: <input type="text" name="notaTeor"><br>
+    
+            Promedio de notas prácticas: <input type="text" disabled value="0" name="promedio"><br><br>
+        </form>
+        <div>
+            <input type="button" value="Verificar si está Aprobado" name="aprobado" onclick="calcularPromedio()">
+            <input disabled id="btnRegistrar" type="button" value="Registrar Alumno" name="registrar" onclick="registrarAlumno()">
+            <span id="aprobo">El alumno superó el nivel!</span>
+            <span id="noAprobo">El alumno no superó el nivel!</span>
+            <span id="registrado">El alumno se registró correctamente</span>
+        </div>
+        <div id="contador">
+            <p>Alumnos Aprobados: </p>
+            <span id="alumAprobados">0</span>
+            <p>Alumnos Reprobados</p>
+            <span id="alumReprobados">0</span>
+        </div>
+        <div id="alumnoRegistrado">
+            <h1>El alumno ya está registrado, ingrese otro diferente...</h1>
+        </div>
+    </main>
+</body>
+</html>

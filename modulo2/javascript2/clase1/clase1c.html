@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="window.print()">
+    <h1>ventana abierta con open</h1>
+    <button onclick="usarOpener()">Opener</button>
+    <button onclick="cambiarLocation()">Location</button>
+    <button onclick="window.close()">Cerrar</button>
+    <button onclick="document.documentElement.requestFullscreen()">Pantalla completa</button>
+    <button onclick="window.resizeBy(10,10)">Crecer</button>
+    <button onclick="maximizar()">Maximizar</button>
+</body>
+<script>
+    function cambiarLocation(){
+        let ubicacion = window.location
+
+        ubicacion = prompt("Introduzca la ubicacion: ",ubicacion)
+        window.location = ubicacion
+    }
+    function usarOpener(){
+        window.opener.console.log("hola")
+        let titulo = promp("Introduzca el titulo: ")
+        window.opener.document.title = titulo
+        document.title = titulo
+    }
+    function maximizar(){
+        window.moveTo(0,0)
+        window.resizeTo(window.screen.availWidth,
+                        window.screen.availHeight)
+    }
+</script>
+</html>

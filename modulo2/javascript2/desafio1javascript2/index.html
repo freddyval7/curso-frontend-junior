@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let arrColores = ["red", "green", "purple", "blue", "yellow", "brown", "black", "orange", "pink", "gray"]
+        let arrUrls = ["https://www.youtube.com/", "https://www.google.com/", "https://es-la.facebook.com/", "https://twitter.com/?lang=es", "https://www.instagram.com/"]
+
+        function alertIdiomaSistema() {
+            alert(`El idioma actual de su navegador es: ${window.navigator.language}`)
+            alert(`El sistema operativo de su computador es: ${window.navigator.platform}`)
+        }
+        function buttonUrl1() {
+            let ubicacion = arrUrls[1]
+            window.location = ubicacion
+        }
+        function buttonUrl2() {
+           let ubicacion = arrUrls[2]
+            window.location = ubicacion
+        }
+        function buttonUrl3() {
+            let ubicacion = arrUrls[0]
+            window.location = ubicacion
+        }
+        function ventanaUrl(){
+            let ancho = window.screen.availWidth/3*2
+            let alto = window.screen.availHeight/4*3
+
+            let ventana = window.open(arrUrls[4],"_blank","width=" + ancho + ",height=" + alto)
+
+            let anchoCentrado = (screen.availWidth - ancho)/2
+            let altoCentrado = (screen.availHeight - alto)/2
+            ventana.moveTo(anchoCentrado,altoCentrado)
+        }
+        function colores(){
+            num = Math.random() * 9
+            num = num.toFixed(0);
+
+            document.body.style.backgroundColor = arrColores[num]
+            document.title = arrColores[num]
+        }
+    </script>
+
+    <button onclick="alertIdiomaSistema()">Mostrar Idioma del navegador y Sistema operativo</button>
+    <button onclick="buttonUrl1()">Abrir Google</button>
+    <button onclick="buttonUrl2()">Abrir Facebook</button>
+    <button onclick="buttonUrl3()">Abrir Youtube</button>
+    <button onclick="ventanaUrl()">Abrir ventana de instagram</button>
+    <button onclick="colores()">Cambiar Color</button>
+</body>
+
+</html>

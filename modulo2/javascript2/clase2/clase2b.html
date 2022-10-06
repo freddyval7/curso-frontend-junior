@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Jose Luis Rojas Dellan dice:<h1>Practicando con formularios</h1>
+    <form action="http://google.com/search" target="_blank" method="GET">
+        <input type="text" name="q" placeholder="buscar en google" />
+        <input type="submit" value="Buscar" />
+    </form>
+    <hr>
+    <form name="datos">
+        Precio: <input type="text" name="precio" /> $<br>
+        Cantidad: <input type="text" name="cantidad" /> <br>
+        Sub total <input value="0" disabled type="text" name="subtotal" /> $<br>
+        Iva: <input type="text" name="iva" disabled><br>
+        Total: <input value="0" type="text" name="total" disabled> $<br><br>
+    </form>
+    <button id="btnCalcular" onclick="calcular()">Calcular</button>
+    <div>
+        <button disabled id="btnAgregar" onclick="agregarACarrito()">
+            Agregar al carrito
+        </button>
+        <h2 id="error" style="background-color: red;color: white; display: none;">Debe tener un valor diferente de 0
+        </h2>
+        <h2>Carrito</h2>
+        <p>
+            <b>Cantidad de productos:</b>
+            <span id="numeroItems">0</span><br>
+            <b>Monto total:</b>
+            <span id="totalItem">0</span>
+        </p>
+    </div>
+    <script src="./clase2b.js"></script>
+</body>
+
+</html>

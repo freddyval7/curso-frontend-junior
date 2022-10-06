@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Practicando la manipulacion de elementos</h1>
+    <div >
+        <p id="articulo">Harina Pan</p>
+        <button onclick="verNombreArticulo()">Ver</button>
+    </div>
+    <div>
+        <p>Precio: <span id="precio">1.5</span>$</p>
+        <button onclick="aumentarPrecio()">Aumentar</button>
+    </div>
+    <div>
+        <p>Existencia: <span id="existencia">200</span></p>
+        <button onclick="decrementarExistencia()">Disminuir</button>
+    </div>
+</body>
+    <script>
+        function aumentarPrecio(){
+            let precioArt = document.getElementById("precio")
+
+            let precioActual = parseFloat(precioArt.innerText)
+            precioActual += precioActual*0.1
+
+            precioArt.innerText = precioActual.toFixed(2)
+        }
+
+        function decrementarExistencia(){
+            let existenciaArt = document.getElementById("existencia")
+            let existenciaActual = parseFloat(existenciaArt.innerText)
+            existenciaActual -= 20
+
+            if (existenciaActual > 0)
+                existenciaArt.innerText = existenciaActual  
+            else{
+                existenciaArt.innerText = 0
+                alert("No hay más existencia")
+            }   
+        }
+
+        function verNombreArticulo(){
+            let nombreArt = document.getElementById("articulo")
+
+            console.log(`El articulo se llama ${nombreArt.innerText}`)
+            if (nombreArt.style.backgroundColor=="red")
+                nombreArt.style.backgroundColor="green"
+            else
+            nombreArt.style.backgroundColor="red"
+        }
+    
+    </script> 
+</html>

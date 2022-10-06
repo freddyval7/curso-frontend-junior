@@ -1,0 +1,8 @@
+COLORES:
+
+- Morado: #5e42a6
+- Rosado: #fe7472
+- Azul: #749ffe
+- Naranja claro: #ffb274
+
+Tipografía: Century Gothic. Pueden usar otra tipografía Sans-serif.
