@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mas validaciones</title>
+</head>
+<body>
+    <h1>Registro de usuarios</h1>
+    <form name="datos">
+        Correo <input name="correo" type="email" /> <br>
+        <p id="correo-error" style="color: red; display: none">
+            El correo tiene un formato inválido
+        </p>
+        <div >
+            Ciudad 
+            <select name="ciudad">
+                <option>Seleccione la ciudad</option>
+                <option>Barquisimeto</option>
+                <option>Caracas</option>
+                <option>Valencia</option>
+            </select> *
+            <p class="error" style="color: red; display: none">
+                Debe seleccionar una ciudad
+            </p>
+        </div>
+        <div >
+            Profesión 
+            <select name="profesion"> 
+                <option>Seleccione la profesion</option>
+                <option>Ingeniero</option>
+                <option>Programador</option>
+                <option>Mecánico</option>
+            </select> *
+            <p class="error" style="color: red; display: none">
+                Debe seleccionar una profesión
+            </p>
+        </div>
+        <div>
+            Idiomas que habla<br>
+            <input class="idioma" type="checkbox" name="idiomas[]"/>Español<br>
+            <input class="idioma" type="checkbox" name="idiomas[]"/>Inglés<br>
+            <input class="idioma" type="checkbox" name="idiomas[]"/>Portugues<br>
+            <input class="idioma" type="checkbox" name="idiomas[]"/>Frances<br>
+        </div>
+        <hr>
+        <label>
+            <input name="deacuerdo" type="checkbox" />Esta de acuerdo con las políticas
+        </label>
+        <br><br><input name="btnRegistrar" value="Registrar" type="button" />
+    </form>
+    <script>
+        document.datos.correo.onfocus = function(){
+            this.style.backgroundColor = "red"
+        }
+
+        document.datos.correo.onkeydown = function(event){
+            let validos = "abcdefghijklmnopqrstuvwyz0123456789.@-_"
+            //console.log(event.keyCode)
+            
+            // para que presionar enter funcione como si hiciera
+            // click sobre el boton registrar
+            if (event.keyCode == 13)
+                document.datos.btnRegistrar.onclick()
+
+            if (event.keyCode ==8 || event.keyCode ==9 || 
+                event.keyCode ==37 || event.keyCode ==39 ||
+                event.keyCode ==35)
+                return true;
+
+            if (!validos.includes(event.key))
+                return false
+
+            console.log(`keydown: ${document.datos.correo.value}`)
+            
+        }
+
+        document.datos.correo.onkeyup = function(event){
+            console.log(`keyup: ${document.datos.correo.value}`)
+            //console.log(event)
+        }
+
+        document.datos.correo.onkeypress = function(event){
+            console.log(`keypress: ${document.datos.correo.value}`)
+            //console.log(event)
+        }
+
+        // onblur se dispara cuando el usuario sale del elemento
+        document.datos.correo.onblur = function(){
+            this.style.backgroundColor = "white"
+            if (this.value.trim().length>0){
+                let error = document.getElementById("correo-error");
+
+                if (validarFormatoCorreo(this.value))
+                    error.style.display="none"
+                else
+                    error.style.display="block"
+            }
+        }
+       
+        function validarFormatoCorreo(correo){
+            let reg = /^(([^<>()\[\]\.,;:\s@\”]+(\.[^<>()\[\]\.,;:\s@\”]+)*)|(\”.+\”))@(([^<>()[\]\.,;:\s@\”]+\.)+[^<>()[\]\.,;:\s@\”]{2,})$/
+
+            return reg.test(correo)
+        }
+
+        function validarIdiomas(){
+            let checkeds = document.getElementsByClassName("idioma")
+            
+            for (let i=0;i<checkeds.length;i++)
+                if (checkeds[i].checked)
+                    return true;
+
+            return false
+        }
+
+        document.datos.btnRegistrar.onclick=()=>{
+            let valido1 = validarSelect(document.datos.ciudad);
+            let valido2 = validarSelect(document.datos.profesion)
+            let valido3 = false;
+
+            if (document.datos.correo.value=="")
+                alert("Debe escribir el correo")
+            else
+                if (!validarFormatoCorreo(document.datos.correo.value))
+                    alert("El correo tiene un formato incorrecto")
+                else
+                    valido3 = true;
+
+            if (valido1 && valido2 && valido3){
+                if (!validarIdiomas())
+                    alert("Debe seleccionar al menos un idioma")
+                else
+                    if (!document.datos.deacuerdo.checked)
+                        alert("Debe estar de acuerdo con las poíticas")
+                    else{
+                        alert("Registrado exitosamente")
+                        document.datos.reset()
+                }
+            }
+        }
+
+        document.datos.ciudad.onchange = function(){
+            validarSelect(this)
+        }
+
+        document.datos.profesion.onchange = function(){
+            validarSelect(this)
+        }
+
+       function validarSelect(select){
+           if (select.selectedIndex==0){
+               select.style.borderColor="red"
+               select.nextSibling.nextSibling.style.display="block"
+               return false
+           }else{
+                select.style.borderColor="black"
+                select.nextSibling.nextSibling.style.display="none"
+                return true
+           }
+       }
+    </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Capitulo 6</title>
+    <script src="capitulo8.js"></script>
+</head>
+<body>
+    <h1>Practicando con formularios</h1>
+    <form action="http://google.com/search" target="_blank" method="GET">
+        <input type="text" name="q" placeholder="buscar en google" />
+        <input type="submit" value="Buscar" />
+    </form>
+    <hr>
+    <form name="datos">
+        Nombre: <input type="text" name="nombre" /> <br>
+        Precio: <input type="text" name="precio" /> $<br>
+        Cantidad: <input type="text" name="cantidad" /> <br>
+        Sub total <input value="0" disabled type="text" name="subTotal" /> $<br><br>
+    </form>
+    <button id="btnCalcular" >Calcular</button>
+    <div>
+        <button disabled id="btnAgregar">
+            Agregar al carrito
+        </button>
+        <h2 id="error" style=" display: none; background-color: red;color: white;">
+            Debe tener un valor diferente de 0
+        </h2>
+        <h2>Carrito</h2>
+        <table id="listado" style="display: none" width="500px" border="1">
+            <tr>
+                <td></td>
+                <td>Nº</td>
+                <td>Nombre</td>
+                <td>Precio</td>
+                <td>Cantidad</td>
+                <td>Sub Total</td>
+            </tr>
+        </table>
+        <p>
+            <b>Cantidad de productos:</b> 
+            <span id="numeroItems">0</span><br>
+            <b>Monto total:</b> 
+            <span id="totalItem">0</span>
+        </p>
+    </div>
+    <img id="foto" width="200px" height="200px" src="https://images6.alphacoders.com/568/568500.jpg"/>
+</body>
+</html>

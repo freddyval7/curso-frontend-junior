@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Desafío 4</title>
+</head>
+<script src="./js/functions.js"></script>
+<body>
+    <header class="header">
+        <h1>Mi cuenta</h1>
+    </header>
+    <section class="main">
+        <form name="form1" class="form">
+            <h1>Acceder</h1>
+            Nombre de Usuario o Correo electrónico: <br><input type="text" name="nomCorreo"><br>
+            Contraseña: <br><input type="password" name="contra"><br> 
+            <input id="btnAcceder" value="Acceder" type="button"/><br><br>
+        </form>
+        <div></div>
+        <form name="form2" class="form">
+            <h1>Registrarse</h1>
+            Nombre de Usuario: <br><input type="text" name="user"><br>
+            Dirección de correo electrónico: <br><input type="email" name="correo"><br>
+            <p id="correo-error">
+                El correo tiene un formato inválido!
+            </p>
+            Contraseña: <br><input type="password" name="contra" id="pass"><br>
+            <p id="pass-error">
+                La contraseña debe tener 4 caracteres mín.
+            </p>
+            Confirmar Contraseña: <br><input type="password" name="contraConfirm"><br>
+            <p id="passSame">
+                Las contraseñas no coinciden!
+            </p>
+            <input id="btnRegistrar" value="Registrar" type="button"/>
+        </form>
+        <div id="userExist">
+            <h1>El usuario ya está registrado, ingrese uno nuevo</h1>
+        </div>
+        <div id="emailExist">
+            <h1>El correo ya está registrado, ingrese uno nuevo</h1>
+        </div>
+        <div id="userOrPassNotExist">
+            <h1>Usuario o clave no existen</h1>
+        </div>
+    </section>
+</body>
+</html>

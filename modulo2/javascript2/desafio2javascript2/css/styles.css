@@ -1,4 +1,4 @@
-body{
+body {
     margin: 0;
     display: flex;
     flex-direction: column;
@@ -6,12 +6,12 @@ body{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-span{
+span {
     margin-top: 25px;
     text-align: center;
 }
 
-#aprobo{
+#aprobo {
     background-color: red;
     color: white;
     display: none;
@@ -19,7 +19,7 @@ span{
     border-radius: 5px;
 }
 
-#noAprobo{
+#noAprobo {
     background-color: blue;
     color: white;
     display: none;
@@ -27,7 +27,7 @@ span{
     border-radius: 5px;
 }
 
-#registrado{
+#registrado {
     background-color: green;
     color: white;
     display: none;
@@ -35,7 +35,7 @@ span{
     border-radius: 5px;
 }
 
-#contador{
+#contador {
     width: 250px;
     height: 200px;
     background-color: aquamarine;
@@ -44,19 +44,27 @@ span{
     text-align: center;
     border: 1px solid aquamarine;
     border-radius: 5px;
+    position: absolute;
+    right: 100px;
+    top: 30%;
 }
 
 #alumnoRegistrado{
-    width: 500px;
-    height: 300px;
+    margin-top: 20px;
+    width: 250px;
+    height: 250px;
     background-color: aqua;
     color: black;
     display: none;
     border: 1px solid aqua;
     border-radius: 5px;
+    position: absolute;
+    left: 100px;
+    top: 35%;
+    text-align: center;
 }
 
-header{
+header {
     width: 100%;
     height: 20%;
     background-color: aquamarine;
@@ -67,7 +75,7 @@ header{
     border-radius: 5px;
 }
 
-main{
+main {
     width: 100%;
     height: 80%;
     display: flex;
@@ -76,7 +84,7 @@ main{
     align-items: center;
 }
 
-form{
+form {
     margin-top: 50px;
     border: 1px solid green;
     border-radius: 5px;
@@ -89,7 +97,38 @@ form{
     background-color: burlywood;
 }
 
-main > div:first-of-type{
+main>div:first-of-type {
     padding: 50px;
 }
 
+#tabla{
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    display: none;
+}
+
+#tabla td, #tabla th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#tabla tr:nth-child(even){
+    background-color: rgb(230, 219, 219);
+}
+
+#tabla tr:nth-child(odd)
+{
+    background-color: white;
+}
+#tabla tr:hover {
+    background-color: #ddd;
+}
+
+#tabla th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #04AA6D;
+    color: white;
+}

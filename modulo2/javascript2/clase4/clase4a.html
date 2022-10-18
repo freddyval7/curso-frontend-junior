@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Practicando Validacion de formularios</title>
+</head>
+<body>
+    <h1>Practicando validacion de formularios con input type submit</h1>
+    <form name="google" action="http://google.com/search" method="GET">
+        <input type="text" name="q" placeholder="buscar en google" />
+        <span id="error" style="display: none;color: red">
+            Debe escribir algo para buscar
+        </span>
+        <br><br>
+        <input type="submit" value="Buscar" />
+    </form>
+    
+    <hr>
+    <h1>Practicando validacion de formularios con input type button</h1>
+    <form name="google2" action="http://google.com/search" method="GET">
+        <input type="text" name="q" placeholder="buscar en google" />
+        <span id="error2" style="display: none;color: red">
+            Debe escribir algo para buscar
+        </span>
+        <br><br><input name="btnBuscar" type="button" value="Buscar" />
+    </form>
+    <script>
+        document.google2.btnBuscar.onclick=()=>{
+            if (document.google2.q.value.trim().length<3)
+                document.getElementById("error2").style.display="inline"
+            else
+                // si no hay error, se llama al metodo submit del formulario
+                // no se llama el onsubmit
+                document.google2.submit();
+        }
+
+        document.google.onsubmit = ()=>{
+            if (document.google.q.value.trim()==""){
+                document.getElementById("error").style.display="inline"
+                return false;
+            }else
+                return true;
+        }
+    
+    </script>
+</body>
+</html>

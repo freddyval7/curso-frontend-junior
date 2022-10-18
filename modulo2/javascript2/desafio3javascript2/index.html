@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styles.css">
+    <script src="./js/funciones.js"></script>
+    <title>Desafio 3</title>
+</head>
+<body>
+    <header>
+        <h1>Desafio 3</h1>
+    </header>
+    <main>
+        <form name="alumnos">
+            Nombre: <input type="text" name="nombre"><br>
+            Nota Práctica 1: <input class="nota" type="text" name="notaPract1"><br>
+            Nota Práctica 2: <input class="nota" type="text" name="notaPract2"><br>
+            Nota Práctica 3: <input class="nota" type="text" name="notaPract3"><br>
+            Nota Práctica 4: <input class="nota" type="text" name="notaPract4"><br>
+            Nota Teórica: <input class="nota" type="text" name="notaTeor"><br>
+    
+            Promedio de notas prácticas: <input type="text" disabled value="0" name="promedio"><br><br>
+        </form>
+        <div>
+            <input id="btnAprobar" type="button" value="Verificar si está Aprobado" name="aprobado">
+            <input id="btnRegistrar" type="button" value="Registrar Alumno" name="registrar">
+            <input id="btnGenerarNota" type="button" value="Generar Notas" name="generar">
+            <span id="aprobo">El alumno superó el nivel!</span>
+            <span id="noAprobo">El alumno no superó el nivel!</span>
+            <span id="registrado">El alumno se registró correctamente</span>
+        </div>
+        <div id="contador">
+            <p>Alumnos Aprobados: </p>
+            <span id="alumAprobados">0</span>
+            <p>Alumnos Reprobados</p>
+            <span id="alumReprobados">0</span>
+        </div>
+        <div id="alumnoRegistrado">
+            <h1>El alumno ya está registrado, ingrese otro diferente...</h1>
+        </div>
+        <div id="errorValidacion" style="display: none;">
+            <h1>No puede dejar los campos vacíos, rellenelos, por favor</h1>
+        </div>
+        <div>
+            <table id="tabla">
+                <tr>
+                    <th>Nro</th>
+                    <th>Nombre</th>
+                    <th>Nota 1</th>
+                    <th>Nota 2</th>
+                    <th>Nota 3</th>
+                    <th>Nota 4</th>
+                    <th>Nota Teórica</th>
+                    <th>Promedio Total</th>
+                    <th>Estatus</th>
+                </tr>
+            </table>
+        </div>
+    </main>
+</body>
+</html>

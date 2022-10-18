@@ -1,0 +1,150 @@
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(250, 235, 217);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+span {
+    margin-top: 25px;
+    text-align: center;
+}
+
+#aprobo {
+    background-color: red;
+    color: white;
+    display: none;
+    border: 1px solid red;
+    border-radius: 5px;
+}
+
+#noAprobo {
+    background-color: blue;
+    color: white;
+    display: none;
+    border: 1px solid blue;
+    border-radius: 5px;
+}
+
+#registrado {
+    background-color: green;
+    color: white;
+    display: none;
+    border: 1px solid green;
+    border-radius: 5px;
+}
+
+#contador {
+    width: 250px;
+    height: 200px;
+    background-color: aquamarine;
+    color: black;
+    display: none;
+    text-align: center;
+    border: 1px solid aquamarine;
+    border-radius: 5px;
+    position: absolute;
+    right: 100px;
+    top: 30%;
+}
+
+#alumnoRegistrado {
+    margin-top: 20px;
+    width: 250px;
+    height: 250px;
+    background-color: aqua;
+    color: black;
+    display: none;
+    border: 1px solid aqua;
+    border-radius: 5px;
+    position: absolute;
+    left: 100px;
+    top: 25%;
+    text-align: center;
+}
+
+#errorValidacion{
+    margin-top: 20px;
+    width: 250px;
+    height: 250px;
+    background-color: brown;
+    color: black;
+    display: none;
+    border: 1px solid brown;
+    border-radius: 5px;
+    position: absolute;
+    left: 100px;
+    top: 25%;
+    text-align: center;
+}
+
+header {
+    width: 100%;
+    height: 20%;
+    background-color: aquamarine;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: 1px solid aquamarine;
+    border-radius: 5px;
+}
+
+main {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    margin-top: 50px;
+    border: 1px solid green;
+    border-radius: 5px;
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: burlywood;
+}
+
+main>div:first-of-type {
+    padding: 50px;
+}
+
+#tabla{
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    display: none;
+    margin-bottom: 10%;
+}
+
+#tabla td, #tabla th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#tabla tr:nth-child(even){
+    background-color: rgb(230, 219, 219);
+}
+
+#tabla tr:nth-child(odd)
+{
+    background-color: white;
+}
+#tabla tr:hover {
+    background-color: #ddd;
+}
+
+#tabla th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #04AA6D;
+    color: white;
+}
