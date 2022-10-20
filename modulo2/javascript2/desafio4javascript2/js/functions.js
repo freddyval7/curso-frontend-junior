@@ -100,17 +100,31 @@ window.onload = function () {
     }
 
     document.getElementById("btnAcceder").onclick = function (){
+        debugger;
         let user = document.form1.nomCorreo.value
         let contra = document.form1.contra.value
         let error = document.getElementById("userOrPassNotExist")
+        let coin1
+        let coin2
+        
 
         if (user.trim() == "" || contra.trim() == "") {
             alert("Los campos no deben estar vacíos")
         }
 
-        if(arrNombres.includes(user) && arrPassword.includes(contra))
+        for(i=0; i<arrNombres.length; i++){
+            if(arrNombres[i] == user)
+                coin1 = arrNombres.indexOf(user)
+                else if(arrCorreos[i] == user)
+                    coin1 = arrCorreos.indexOf(user)
+
+            if(arrPassword[i] == contra)
+                coin2 = arrPassword.indexOf(contra)
+        }
+
+        if(coin1 == coin2)
             window.location.assign("http://www.google.com")
         else
-            error.style.display = "block"
+            error.style.display = "block"        
     }
 }

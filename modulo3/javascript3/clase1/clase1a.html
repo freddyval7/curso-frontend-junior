@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>jQueary</h1>
+    <p>Este es el pensum de la carrera:</p>
+    <p class="curso">JavaScript</p>
+    <p class="curso">HTML</p>
+    <p class="curso">Framework</p>
+    <p>Para más informacion...</p>
+</body>
+<script src="../jquery-3.6.1.min.js"></script>
+<script>
+    // es equivalente a window.onload
+    $(document).ready(() => {
+        console.log("jQueary y el document estan listos!")
+        $(".curso").click(function(){
+            // se esconden los elementos que tengan la clase curso
+            $(this).hide()
+        })
+        $("h1").click(function(){
+            $(".curso").show()
+        })
+        $("#info").click(function(){
+            window.open("https://cadif1.com")
+        })
+    })
+
+    // $("table").click(function () {
+    //     $(this).hide()
+    // }) 
+</script>
+
+</html>
