@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Desafio 1</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <style>
+        table img:hover{
+            cursor: pointer;
+        }
+        .seleccionada{
+            border: 3px solid salmon;
+        }
+    </style>
+</head>
+
+<body class="p-3">
+    <section style="background-color: #FFE5E5; border: 2px solid salmon;" class="rounded-2">
+        <div class="px-5">
+            <h1 id="puntos"></h1>
+            <button id="btnReiniciar">Volver a Empezar</button>
+        </div>
+        <section class="d-flex flex-nowrap justify-content-around mt-4 mb-4">
+            <table class="table table-sm table-success w-50 mt-2" id="tabla">
+                <tr>
+                    <td><img style="width: 125px; height: 125px;" src="./img/martillo.webp" title="Martillo"></td>
+                    <td><img style="width: 125px; height: 125px;" src="./img/tornillo.jpg" title="Tornillo"></td>
+                    <td><img style="width: 125px; height: 125px;" src="./img/sierra.jpg" title="Sierra"></td>
+                    <td><img style="width: 125px; height: 125px;" src="./img/destornillador.jpg" title="Destornillador"></td>
+                </tr>
+                <tr>
+                    <td><img style="width: 125px; height: 125px;" src="./img/llaveInglesa.jpg" title="Llave Inglesa"></td>
+                    <td><img style="width: 125px; height: 125px;" src="./img/llave.jpg" title="Llave"></td>
+                    <td><img style="width: 125px; height: 125px;" src="./img/tornillo.jpg" title="Tornillo"></td>
+                    <td><img style="width: 125px; height: 125px;" src="./img/cuchillo.jpg" title="Cuchillo"></td>
+                </tr>
+                <tr>
+                    <td><img style="width: 125px; height: 125px;" src="./img/sierra.jpg" title="Sierra"></td>
+                    <td><img style="width: 125px; height: 125px;" src="./img/aspiradora.jpeg" title="Aspiradora"></td>
+                    <td><img style="width: 125px; height: 125px;" src="./img/llaveInglesa.jpg" title="Llave inglesa"></td>
+                    <td><img style="width: 125px; height: 125px;" src="./img/aspiradora.jpeg" title="Aspiradora"></td>
+                </tr>
+                <tr>
+                    <td><img style="width: 125px; height: 125px;" src="./img/cuchillo.jpg" title="Cuchillo"></td>
+                    <td><img style="width: 125px; height: 125px;" src="./img/martillo.webp" title="Martillo"></td>
+                    <td><img style="width: 125px; height: 125px;" src="./img/llave.jpg" title="Llave"></td>
+                    <td><img id="imgRandom" style="width: 125px; height: 125px;" src="./img/destornillador.jpg" title="Destornillador"></td>
+                </tr>
+            </table>
+            <div class="d-flex flex-column" id="imgGrande">
+                <span class="fw-bold mb-3"></span>
+                <img class="rounded-2" style="display: none;" width="350px" height="350px" src="">
+            </div>
+            <div>
+                <span id="titulo" class="fw-bold" style="display:none">Historial de selecciones:</span>
+                <ol id="lista">
+                
+                </ol>
+            </div>
+        </section>
+    </section>
+</body>
+<script src="./jquery-3.6.1.min.js"></script>
+<script src="./functions.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+    crossorigin="anonymous"></script>
+</html>

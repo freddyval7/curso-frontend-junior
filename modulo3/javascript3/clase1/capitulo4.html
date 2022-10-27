@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Agregando y eliminando elementos</title>
+    <style>
+        .seleccionado {
+            color:#f25822 !important;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    
+    </style>
+</head>
+<body>
+    <h1>Lista de cosas por hacer</h1>
+    <input type="text" id="porHacer" 
+        placeholder="Escriba lo que tiene por hacer y presione enter" />
+    <ol id="lista">
+
+    </ol>
+    <p id="resumen"></p>
+    <button id="btnLimpiar" style="display: none">Limpiar Lista</button>
+</body>
+<script src="../jquery-3.6.1.min.js"></script>
+<script>
+    // cuando la pagina lista
+    $(document).ready(()=>{
+        let n=0;
+        let lista = $("#lista");
+
+        lista.click(()=>{
+            // si tiene la clase, se la quita, sino, se la agrega
+            lista.toggleClass("seleccionado")
+        })
+
+        // al hacer click en el boton limpiar
+        $("#btnLimpiar").click(()=>{
+            // limpiamos la lista
+            lista.empty();
+            // borramos el texto del resumen
+            $("#resumen").text("");
+            // escondemos el boton
+            $("#btnLimpiar").hide();
+            n=0;
+        })
+
+        // cuando el usuario presiona la tecla
+        $("#porHacer").keyup((event)=>{
+            //console.log(event)
+            // si el usuario presiona la tecla Enter
+            if (event.originalEvent.keyCode == 13){
+                // buscamos el valor del input
+                let value = $("#porHacer").val();
+                let nuevoItem = `<li>${value}</li>`
+                // agregamos un nuevo li a la lista
+                lista.append(nuevoItem)
+                // limpiamos el input
+                $("#porHacer").val("")
+                n++;
+                if (n%2 == 0)
+                    lista.css({"background-color":"white",
+                                     "font-weight": "100"});
+                else
+                    lista.css({"background-color":"#f1f1f1",
+                                    "font-weight": "800"});
+
+                // agregar etiquetas html al resumen
+                $("#resumen").html(`Tiene <b>${n}</b> cosas por hacer`)
+                // mostrarmos el boton limpiar
+                $("#btnLimpiar").show()
+            }
+        })
+    })
+</script>
+</html>

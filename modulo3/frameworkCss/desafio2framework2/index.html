@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Desafío 1</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  </head>
+  <style>
+    body{
+        background-color: #F0F2F5;
+    }
+    @media screen and (max-width: 768px) {
+        #nav{
+            width: 100% !important;;
+        }
+        #center{
+            font-size: small;
+        }
+        #stories{
+            height: 50% !important;
+        }
+    }
+  </style>
+  <body>
+    <!-- <header style="background-color: white;" id="mobile" class="container-fluid bg-white d-flex d-md-none p-3 justify-content-between">
+        <div class="d-flex align-items-center justify-content-around" style="width: 35%;">
+            <img src="./img/facebook-logo.svg" style="width: 40px;">
+            <div class="d-flex align-items-center justify-content-center rounded-circle" style="background-color: #D8DADF; width: 40px; height: 40px;"><img src="./img/search-logo.png" style="width: 20px; height: 50%;"></div>
+            <ion-icon name="menu-outline" size="large"></ion-icon>
+        </div>
+        <nav class="d-flex align-items-center m-0 justify-content-around w-50">
+            <div class="d-flex align-items-center justify-content-center rounded-circle" style="background-color: #D8DADF; width: 40px; height: 40px;"><img src="./img/plus-logo.png" style="width: 20px; height: 50%;"></div>
+            <div class="d-flex align-items-center justify-content-center rounded-circle" style="background-color: #D8DADF; width: 40px; height: 40px;"><img src="./img/Facebook_Messenger-Black-Logo.wine.svg" style="width: 20px; height: 50%;"></div>
+            <div class="d-flex align-items-center justify-content-center rounded-circle" style="background-color: #D8DADF; width: 40px; height: 40px;"><img src="./img/bell-logo.png" style="width: 20px; height: 50%;"></div>
+            <div class="d-flex align-items-center justify-content-center rounded-circle" style="background-color: #D8DADF; width: 40px; height: 40px;"><img src="./img/arrow-drop.png" style="width: 20px; height: 50%;"></div>
+        </nav>
+    </header> -->
+    <header style="background-color: white;" id="desktop" class="d-flex container-fluid bg-white p-3 justify-content-between align-items-center">
+        <div class="d-none d-md-flex" style="width: 20%;">
+          <img src="./img/facebook-logo.svg" style="width: 40px;">
+          <div style="background-color: #F0F2F5; width: 90%;" class="d-flex rounded-pill align-items-center ms-2">
+            <ion-icon class="ms-2" name="search-outline" size="small"></ion-icon>
+            <p class="m-0 ms-2">Buscar en Facebook</p>
+          </div>
+        </div>
+        <nav id="nav" class="d-flex align-items-center m-0 justify-content-around" style="width: 35%;">
+          <div class="d-flex align-items-center justify-content-center" style="height: 100%; width: 15%; padding: 10px 0; border-bottom: solid 3px #3180E4;">
+            <img src="./img/house-logo.png" style="width: 40px; height: 100%;">
+          </div>
+          <div class="position-relative">
+              <ion-icon name="play-circle-outline" size="large"></ion-icon>
+              <div class="btn btn-danger btn-sm text-white position-absolute top-0 start-100 translate-middle rounded-pill">9+</div>
+          </div>
+          <ion-icon name="storefront-outline" size="large"></ion-icon>
+          <ion-icon name="people-circle-outline" size="large"></ion-icon>
+          <ion-icon name="extension-puzzle-outline" size="large"></ion-icon>
+        </nav>
+        <ul class="d-none d-md-flex align-items-center m-0 justify-content-around px-0" style="width: 300px;">
+          <div class="d-flex flex-nowrap align-items-center" style="width: 30%;">
+            <img class="rounded-circle" src="./img/yo.jpg" style="width: 40px; height: 40px; object-fit: cover;">
+            <span class="fw-semibold ms-1">Freddy</span>
+          </div>
+          <div class="d-flex align-items-center justify-content-center rounded-circle" style="background-color: #D8DADF; width: 40px; height: 40px;"><img src="./img/dots-menu.svg" style="width: 20px; height: 50%;"></div>
+          <div class="position-relative">
+            <div class="d-flex align-items-center justify-content-center rounded-circle" style="background-color: #D8DADF; width: 40px; height: 40px;"><img src="./img/Facebook_Messenger-Black-Logo.wine.svg" style="width: 20px; height: 50%;"></div>
+            <div class="bg-danger text-white position-absolute top-0 start-100 translate-middle rounded-pill px-2">1</div>
+          </div>
+          <div class="position-relative">
+            <div class="d-flex align-items-center justify-content-center rounded-circle" style="background-color: #D8DADF; width: 40px; height: 40px;"><img src="./img/bell-logo.png" style="width: 20px; height: 50%;"></div>
+            <div class="btn btn-danger btn-sm text-white position-absolute top-0 start-100 translate-middle rounded-pill px-2">20+</div>
+          </div>
+          <div class="d-flex align-items-center justify-content-center rounded-circle" style="background-color: #D8DADF; width: 40px; height: 40px;"><img src="./img/arrow-drop.png" style="width: 20px; height: 50%;"></div>
+        </ul>
+    </header>
+
+    <main>
+        <section id="main" class="container-fluid mt-3 justify-content-around">
+            <div class="row">
+                <div id="left" class="d-none d-md-block col-md-3">
+                    <div class="d-flex flex-column">
+                        <div class="d-flex align-items-center mt-2 mb-4">
+                            <img class="rounded-circle" src="./img/yo.jpg" style="width: 50px; height: 50px; object-fit: cover;">
+                            <span class="fs-5 fw-semibold ms-2">Freddy Tomada</span>
+                        </div>
+                        <div class="d-flex align-items-center mb-4">
+                            <img src="./img/friends.png" style="width: 50px; height: 50px; object-fit: contain;">
+                            <div class="d-flex flex-column ms-1">
+                                <span class="fs-5 fw-semibold ms-2">Amigos</span>
+                                <div class="d-flex text-info align-items-center">
+                                    <div class="rounded-circle bg-primary" style="width: 10px; height:10px;"></div>
+                                    <span class="ms-1">1 solicitud</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center mb-4">
+                            <img class="rounded-circle" src="./img/groups.png" style="width: 50px; height: 50px; object-fit: cover;">
+                            <span class="fs-5 fw-semibold ms-2">Grupos</span>
+                        </div>
+                        <div class="d-flex align-items-center mb-4">
+                            <img class="rounded-circle" src="./img/marketplace.png" style="width: 50px; height: 50px; object-fit: cover;">
+                            <span class="fs-5 fw-semibold ms-2">Marketplace</span>
+                        </div>
+                        <div class="d-flex align-items-center mb-4">
+                            <img src="./img/watch.png" style="width: 50px; height: 50px; object-fit: contain;">
+                            <div class="d-flex flex-column ms-1">
+                                <span class="fs-5 fw-semibold ms-2">Watch</span>
+                                <div class="d-flex text-info align-items-center">
+                                    <div class="rounded-circle bg-primary" style="width: 10px; height:10px;"></div>
+                                    <span class="ms-1">1 solicitud</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center mb-4">
+                            <img class="rounded-circle" src="./img/clock.png" style="width: 50px; height: 50px; object-fit: cover;">
+                            <span class="fs-5 fw-semibold ms-2">Recuerdos</span>
+                        </div>
+                        <div class="d-flex align-items-center mb-4">
+                            <img class="rounded-circle" src="./img/save.png" style="width: 50px; height: 50px; object-fit: cover;">
+                            <span class="fs-5 fw-semibold ms-2">Guardado</span>
+                        </div>
+                        <div class="d-flex align-items-center mb-4">
+                            <img src="./img/flag.png" style="width: 50px; height: 50px; object-fit: contain;">
+                            <div class="d-flex flex-column">
+                                <span class="fs-5 fw-semibold ms-4">Páginas</span>
+                                <div class="d-flex text-info align-items-center">
+                                    <div class="rounded-circle bg-primary" style="width: 10px; height:10px;"></div>
+                                    <span class="ms-1">+9 actualizaciones</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center mb-4">
+                            <img src="./img/calendar.png" style="width: 50px; height: 50px; object-fit: contain;">
+                            <div class="d-flex flex-column">
+                                <span class="fs-5 fw-semibold ms-2">Eventos</span>
+                                <div class="d-flex text-info align-items-center">
+                                    <div class="rounded-circle bg-primary" style="width: 10px; height:10px;"></div>
+                                    <span class="ms-1">1 notificación</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center mb-4">
+                            <img class="rounded-circle" src="./img/briefcase.png" style="width: 50px; height: 50px; object-fit: cover;">
+                            <span class="fs-5 fw-semibold ms-2">Empleos</span>
+                        </div>
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="d-flex align-items-center justify-content-center rounded-circle" style="background-color: #D8DADF; width: 50px; height: 50px;"><img src="./img/arrow-drop.png" style="width: 30px; height: 80%;"></div>
+                            <span class="fs-5 fw-semibold ms-2">Ver Más</span>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+                <div id="center" class="col-12 col-md-5 container-fluid container-md">
+                    <div id="stories" style="height: 30%;" class="row justify-content-center">
+                        <div style="background-image: url(./img/yo.jpg); background-position: center; background-repeat: no-repeat; background-size: cover;" class="rounded-2 col-2 d-flex flex-column-reverse p-0 me-2">
+                            <div style="height: 30%;" class="bg-white fw-bold text-center container-fluid p-0 rounded-bottom d-flex align-items-center justify-content-center">
+                                <span id="createStorie" class="fw-bold">Crea una historia</span>
+                            </div>
+                            <div class="position-relative d-none d-md-block">
+                                <div class="rounded-circle align-self-center position-absolute top-100 start-50 translate-middle" style="border: 5px solid white; object-fit: cover;"><img style="width: 45px; height:45px;" src="./img/plus.png"></div>
+                            </div>
+                        </div>
+                        <div style="background-image: url(./img/paisaje-1.webp); background-position: center; background-repeat: no-repeat; background-size: center;" class="rounded-2 col-2 d-flex flex-column-reverse justify-content-between me-2 ms-1 p-2">
+                            <p class="text-white fw-bold">Pedro Pérez</p>
+                            <div class="rounded-circle align-self-start mt-3" style="border: 5px solid #0D6EFD; object-fit: cover;"><img class="rounded-circle" style="width: 40px; height: 40px;" src="./img/hombre1.webp"></div>
+                        </div>
+                        <div style="background-image: url(./img/paisaje-2.webp); background-position: center; background-repeat: no-repeat; background-size: center;" class="rounded-2 col-2 d-flex flex-column-reverse justify-content-between me-2 ms-1 p-2">
+                            <p class="text-white fw-bold">María Delgado</p>
+                            <div class="rounded-circle align-self-start mt-3" style="border: 5px solid #0D6EFD; object-fit: cover;"><img class="rounded-circle" style="width: 40px; height: 40px;" src="./img/mujer2.webp"></div>
+                        </div>
+                        <div style="background-image: url(./img/paisaje-3.webp); background-position: center; background-repeat: no-repeat; background-size: center;" class="rounded-2 col-2 d-flex flex-column-reverse justify-content-between me-2 ms-1 p-2">
+                            <p class="text-white fw-bold">Juan Gonzáles</p>
+                            <div class="rounded-circle align-self-start mt-3" style="border: 5px solid #0D6EFD; object-fit: cover;"><img class="rounded-circle" style="width: 40px; height: 40px;" src="./img/hombre2.jpg"></div>
+                        </div>
+                        <div style="background-image: url(./img/paisaje-4.webp); background-position: center; background-repeat: no-repeat; background-size: center;" class="rounded-2 col-2 d-flex flex-column-reverse justify-content-between position-relative me-2 ms-1 p-2">
+                            <p class="text-white fw-bold">Diana Martínez</p>
+                            <button class="btn btn-light rounded-circle px-0 position-absolute top-50 start-100 translate-middle" style="width: 25%;"><img src="./img/arrow-right.png" style="width: 75%; height: 75%;"></button>
+                            <div class="rounded-circle align-self-start mt-3" style="border: 5px solid #0D6EFD; object-fit: cover;"><img class="rounded-circle" style="width: 40px; height: 40px;" src="./img/mujer1.jpg"></div>
+                        </div>
+                    </div>
+                    <div style="height:auto;" class="row justify-content-center rounded-3 mt-4 bg-white">
+                        <div class="col-12"></div>
+                    </div>
+                </div>
+                <div id="right" class="d-none d-md-block col-md-3">
+                    <div class="container bg-white rounded-3 p-3">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <div class="d-flex align-items-center">
+                                <img style="width: 25px; height:25px;" src="./img/friends.png">
+                                <span class="fs-5 fw-semibold ms-2">Solicitudes de Amistad</span>
+                            </div>
+                            <img style="width: 25px; height:25px;" src="./img/points.png">
+                        </div>
+                        <div class="row">
+                            <div class="col-3 d-flex justify-content-center"><img class="rounded-circle" style="width: 70px; height:70px; object-fit: cover;" src="./img/hombre1.webp"></div>
+                            <div class="col-9">
+                                <div class="d-flex justify-content-between">
+                                    <span class="fs-5 fw-semibold">Mario Castañeda</span>
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-2 text-info">1 sem.</span>
+                                        <div class="rounded-circle bg-primary" style="width: 10px; height:10px;"></div>
+                                    </div>
+                                </div>
+                                <div class="d-flex mt-2 mb-3">
+                                    <div class="d-flex">
+                                        <img class="rounded-circle" style="width: 25px; height:25px;" src="./img/hombre2.jpg">
+                                        <img class="rounded-circle" style="width: 25px; height:25px;" src="./img/mujer1.jpg">
+                                    </div>
+                                    <span class="text-muted ms-2">10 amigos en común</span>
+                                </div>
+                                <div class="d-flex d-xl-none">
+                                    <button class="btn btn-sm btn-primary text-white fw-bold">Confirmar</button>
+                                    <button style="background-color: #D8DADF;" class="btn btn-sm fw-bold">Eliminar</button>
+                                </div>
+                                <div class="d-none d-xl-flex justify-content-around">
+                                    <button class="btn btn-lg btn-primary text-white fw-bold">Confirmar</button>
+                                    <button style="background-color: #D8DADF;" class="btn btn-lg fw-bold">Eliminar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="d-flex flex-column">
+                        <h4 class="text-muted fw-bold">Publicidad</h1>
+                        <div class="d-flex my-4 align-items-center justify-content-around">
+                            <img class="rounded-4" style="object-fit: cover; width: 40%; height: 100%;" src="./img/publi1.webp">
+                            <div class="d-flex flex-column ms-1">
+                                <p class="fw-bold fs-5">Fast Food Now! Order!</p>
+                                <span class="text-muted">www.burguer.com</span>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-around">
+                            <img class="rounded-4" style="object-fit: cover; width: 40%; height: 100%;" src="./img/publi2.webp">
+                            <div class="d-flex flex-column ms-1">
+                                <p class="fw-bold fs-5">Get Your Burguer NOW!</p>
+                                <span class="text-muted">www.burguer.com</span>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- SCRIPTS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  </body>
+</html>
