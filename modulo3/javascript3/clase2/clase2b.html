@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Práctica de objetos</h1>
+    <form name="datos">
+        Nombre <input type="text" name="nombre" /><br>
+        Correo <input type="text" name="correo" /><br>
+        Clave <input type="password" name="clave" /><br><br>
+        <input id="btn-registrar" type="button" value="Registrar" />
+    </form>
+    <div id="mensaje" style="display: none">
+        Se registro exitosamente
+    </div>
+    <script src="../jquery-3.6.1.min.js"></script>
+    <script>
+        let obj;
+
+        $(document).ready(()=>{
+            $("#btn-registrar").click(()=>{
+                obj = new Object();
+
+                obj.nombre = document.datos.nombre.value
+                obj.correo = document.datos.correo.value
+                obj.clave = document.datos.clave.value
+
+                $("#mensaje").fadeIn(500).fadeOut(5000)
+
+                document.datos.reset()
+            })
+        })
+    </script> 
+</body>
+</html>

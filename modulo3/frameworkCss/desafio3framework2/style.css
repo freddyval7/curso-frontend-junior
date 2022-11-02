@@ -1,0 +1,30 @@
+body {
+    background-color: #F0F2F5;
+}
+
+#searchIcon {
+    background-color: #F0F2F5;
+}
+
+.seleccionada{
+    border-bottom: 3px solid #0D6EFD;
+    color: #0D6EFD;
+}
+
+.error{
+    border: 2px solid red;
+}
+
+@media screen and (max-width: 768px) {
+    #nav {
+        width: 100% !important;
+    }
+
+    #center {
+        font-size: small;
+    }
+
+    #stories {
+        height: 50% !important;
+    }
+}

@@ -10,6 +10,32 @@
 </head>
 
 <style>
+  .nav-item{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+  .nav-item:hover{
+    border-bottom: #0d6efd solid 3px;
+  }
+  .nav-link:hover{
+    color: #0d6efd;
+  }
+  .dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0;
+    /* position: relative;
+    top: 75px; */
+  }
+  .dropdown-item{
+    font-weight: bold;
+  }
+  .dropdown-item:hover{
+    color: #0d6efd;
+  }
+
   @media screen and (max-width: 575px) {
     .movieCard {
       height: 415px;
@@ -37,9 +63,100 @@
 
 <body>
   <!-- header -->
-  <header>
+  <header class="">
+    <!-- HEADER HECHO CON NAV DE BOOTSTRAP -->
+    <nav class="navbar navbar-expand-lg bg-white px-lg-5" style="height: 115px;">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="https://www.dc.com/sites/all/themes/dc_comics_bp/logo.png" alt="" height="90%">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-between bg-white" id="navbarSupportedContent" style="height: 115px;">
+          <ul class="navbar-nav w-75 mb-2 mb-lg-0 justify-content-around" style="height: 100%;">
+            <li class="nav-item">
+              <a href="" class="nav-link fw-bold text-uppercase">characters</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a href="" class="nav-link fw-bold text-uppercase dropdown-toggle" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">comics</a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="" class="dropdown-item">LATEST COMIC</a>
+                </li>
+                <li>
+                  <a href="" class="dropdown-item">DC UNIVERSE ITEM</a>
+                </li>
+                <li>
+                  <a href="" class="dropdown-item">ALL COMIC SERIES</a>
+                </li>
+                <li>
+                  <a href="" class="dropdown-item">TOP STORYLINES</a>
+                </li>
+                <li>
+                  <a href="" class="dropdown-item">SHOWCASE COLLECTIONS</a>
+                </li>
+                <li>
+                  <a href="" class="dropdown-item">COMIC SHOP LOCATOR</a>
+                </li>
+                <li>
+                  <a href="" class="dropdown-item">PRINT SUBSCRIPTIONS</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a href="" class="nav-link fw-bold text-uppercase">MOVIES & TV</a>
+            </li>
+            <li class="nav-item">
+              <a href="" class="nav-link fw-bold text-uppercase">games</a>
+            </li>
+            <li class="nav-item">
+              <a href="" class="nav-link fw-bold text-uppercase">VIDEO</a>
+            </li>
+            <li class="nav-item">
+              <a href="" class="nav-link fw-bold text-uppercase">NEWS</a>
+            </li>
+            <li class="nav-item">
+              <a href="" class="nav-link fw-bold text-uppercase">SHOP</a>
+            </li>
+            <li class="nav-item">
+              <a href="" class="nav-link fw-bold text-uppercase">COMMUNITY</a>
+            </li>
+            <li class="nav-item">
+              <a href="" class="nav-link fw-bold text-uppercase">MORE</a>
+            </li>
+            <!-- <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Dropdown
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled">Disabled</a>
+            </li> -->
+          </ul>
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <!-- <button class="btn btn-outline-success" type="submit">Search</button> -->
+          </form>
+        </div>
+      </div>
+    </nav>
     <!-- MOBILE -->
-    <div id="mobile" class="container-fluid p-0 d-block d-md-none">
+    <!-- <div id="mobile" class="container-fluid p-0 d-block d-md-none">
       <div id="whiteBar" style="height: 46px;" class="d-flex justify-content-between px-3 align-items-center">
         <ion-icon class="fs-3" name="menu-outline"></ion-icon>
         <img class="mx-auto" src="https://www.dc.com/sites/all/themes/dc_comics_bp/logo.png" style="height: 90%;"
@@ -49,9 +166,9 @@
       <div id="darkblueBar" class="bg-dark py-2 px-2" style="height: 43px;">
         <span class="text-uppercase text-white fw-bold">movies</span>
       </div>
-    </div>
+    </div> -->
     <!-- DESKTOP -->
-    <div id="desktop" class="d-none d-md-flex justify-content-between align-items-center px-lg-5 px-md-2"
+    <!-- <div id="desktop" class="d-none d-md-flex justify-content-between align-items-center px-lg-5 px-md-2"
       style="height: 115px;">
       <img class="h-75" src="https://www.dc.com/sites/all/themes/dc_comics_bp/logo.png" alt="">
       <nav class="w-75">
@@ -72,7 +189,7 @@
         <span class="text-capitalize fw-bold">search</span>
         <ion-icon class="fs-3" name="search-outline"></ion-icon>
       </div>
-    </div>
+    </div> -->
   </header>
   <!-- MAIN -->
   <main>

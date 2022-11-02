@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Capitulo 7</title>
+</head>
+<body>
+    <h1>Práctica de arreglos de objetos</h1>
+    <form name="datos">
+        Nombre <input type="text" name="nombre" /><br>
+        Correo <input type="text" name="correo" /><br>
+        Clave <input type="password" name="clave" /><br><br>
+        <input id="btn-registrar" type="button" value="Registrar" />
+    </form>
+    <div id="mensaje" style="display: none">
+        Se registro exitosamente
+    </div>
+    <script src="../jquery-3.6.1.min.js"></script>
+    <script>
+        let usuarios = [];
+
+        $(document).ready(()=>{
+            // se agrega al arreglo un primer objeto con valores arbitrarios
+            usuarios.push(new Usuario("jose","jose@gmail.com","987654"))
+
+            $("#btn-registrar").click(()=>{
+                if (!todoValido()){
+                    $("#mensaje").text("hay datos invalidos")
+                    $("#mensaje").fadeIn(500).fadeOut(5000)
+                }else
+                    if (existe(document.datos.correo.value)){
+                        $("#mensaje").text("Ya esta registrado ")
+                        $("#mensaje").fadeIn(500).fadeOut(5000)
+                    }else                        
+                    {
+                        // se crea el objeto
+                        let obj = new Usuario(document.datos.nombre.value,
+                                        document.datos.correo.value,
+                                        document.datos.clave.value);
+                        // se agrega al arreglo el nuevo objeto
+                        usuarios.push(obj)
+                        
+                        $("#mensaje").text("Se registro exitosamente")
+                        $("#mensaje").fadeIn(500).fadeOut(5000)
+                        document.datos.reset()
+                    }
+            })
+        })
+        function existe(correo){
+            for (let i=0;i<usuarios.length;i++)
+                if (usuarios[i].correo.toUpperCase() == correo.toUpperCase())
+                    return true;
+
+            return false;
+       }
+        // versión con parámetros
+        function Usuario(nombre,correo,clave){
+            this.nombre = nombre
+            this.correo = correo
+            this.clave = clave
+            this.saldo = Math.round(Math.random()*1000)
+            this.activo = false
+        }
+
+        // versión sin parámetros
+        /*function Usuario(){
+            this.nombre = document.datos.nombre.value
+            this.correo = document.datos.correo.value
+            this.clave = document.datos.clave.value
+            this.saldo = Math.round(Math.random()*1000)
+            this.activo = false
+        }*/
+
+ 
+        function todoValido(){
+            return true
+        }
+    </script>
+</body>
+</html> 

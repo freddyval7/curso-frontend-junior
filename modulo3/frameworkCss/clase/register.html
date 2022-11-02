@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1 class="text-center mb-5">Formulario de Registro</h1>
+  <div class="d-flex justify-content-center">
+    <form class="p-5 border border-primary border-4 rounded needs-validation">
+      <div class="mb-3">
+        <label for="exampleInputUsername" class="form-label">Username</label>
+        <input type="text" class="form-control" id="exampleInputUsername" aria-describedby="userNameHelp" required>
+        <div class="invalid-feedback">
+          Please choose a username.
+        </div>
+        <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputName" class="form-label">First Name</label>
+        <input type="email" class="form-control" id="exampleInputName" aria-describedby="nameHelp">
+        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputLastName" class="form-label">Last Name</label>
+        <input type="email" class="form-control" id="exampleInputLastName" aria-describedby="lastNameHelp">
+        <div id="lastNameHelp" class="form-text">We'll never share your email with anyone else.</div>
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Password</label>
+        <input type="password" class="form-control" id="exampleInputPassword1">
+      </div>
+      <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+      </div>
+      <hr>
+      <div id="preferencesHelp" class="form-text">select your preferences</div>
+      <div class="mb-3 form-check-inline">
+        <input type="checkbox" class="form-check-input" id="exampleCheck2">
+        <label class="form-check-label" for="exampleCheck2">Superman</label>
+      </div>
+      <div class="form-check-inline mb-3">
+        <input type="checkbox" class="form-check-input" id="exampleCheck3">
+        <label class="form-check-label" for="exampleCheck3">Batman</label>
+      </div>
+      <div class="form-check-inline mb-3">
+        <input type="checkbox" class="form-check-input" id="exampleCheck4">
+        <label class="form-check-label" for="exampleCheck4">Wonder Woman</label>
+      </div>
+      <div class="form-check mb-3">
+        <input type="checkbox" class="form-check-input" id="exampleCheck5">
+        <label class="form-check-label" for="exampleCheck5">Flash</label>
+      </div>
+      <hr>
+      <div id="sexHelp" class="form-text">select your gender</div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="male" checked>
+        <label class="form-check-label" for="exampleRadios1">
+          Male
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="female">
+        <label class="form-check-label" for="exampleRadios2">
+          Female
+        </label>
+      </div>
+      <hr>
+      <div class="row mb-3">
+        <label for="" class="col-sm-2 col-form-label">Born: </label>
+        <div class="col-sm-10">
+          <input type="date" class="form-control">
+        </div>
+      </div>
+      <hr>
+      <div class="form-floating">
+        <textarea class="form-control" placeholder="Leave you bio..." id="floatingTextarea"></textarea>
+        <label for="floatingTextarea">Biography</label>
+      </div>
+      <hr>
+      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="reset" class="btn btn-warning">Clear</button>
+    </form>
+  </div>
+
+
+
+
+  <script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (() => {
+      'use strict'
+
+      // Fetch all the forms we want to apply custom Bootstrap validation styles to
+      const forms = document.querySelectorAll('.needs-validation')
+
+      // Loop over them and prevent submission
+      Array.from(forms).forEach(form => {
+        form.addEventListener('submit', event => {
+          if (!form.checkValidity()) {
+            event.preventDefault()
+            event.stopPropagation()
+          }
+
+          form.classList.add('was-validated')
+        }, false)
+      })
+    })()
+  </script>
+
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

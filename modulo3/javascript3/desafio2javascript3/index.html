@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Desafio 1</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body id="main" class="p-3">
+    <section class="rounded-2">
+        <div class="px-5 w-25 text-center">
+            <div class="bg-danger rounded-2">
+                <h1 id="puntos"></h1>
+            </div>
+            <button class="btn btn-lg btn-danger" id="btnReiniciar">Volver a Empezar</button>
+        </div>
+        <section class="d-flex flex-nowrap justify-content-around mt-4 mb-4">
+            <table class="table table-sm w-50 mt-2" id="tabla">
+                <tr>
+                    <td><img style="width: 125px; height: 125px;" src="./img/mario.jpg" title="Mario"></td>
+                    <td><img style="width: 125px; height: 125px;" src="./img/bowser.png" title="Bowser"></td>
+                    <td><img style="width: 125px; height: 125px;" src="./img/coin.png" title="Coin"></td>
+                    <td><img style="width: 125px; height: 125px;" src="./img/flower.png" title="Flower"></td>
+                </tr>
+                <tr>
+                    <td><img style="width: 125px; height: 125px;" src="./img/flower.png" title="Flower"></td>
+                    <td><img style="width: 125px; height: 125px;" src="./img/goomba.png" title="Goomba"></td>
+                    <td><img style="width: 125px; height: 125px;" src="./img/mario.jpg" title="Mario"></td>
+                    <td><img style="width: 125px; height: 125px;" src="./img/mushroom.png" title="Mushroom"></td>
+                </tr>
+                <tr>
+                    <td><img style="width: 125px; height: 125px;" src="./img/pipe.png" title="Pipe"></td>
+                    <td><img style="width: 125px; height: 125px;" src="./img/bowser.png" title="Bowser"></td>
+                    <td><img style="width: 125px; height: 125px;" src="./img/goomba.png" title="Goomba"></td>
+                    <td><img style="width: 125px; height: 125px;" src="./img/pipe.png" title="Pipe"></td>
+                </tr>
+                <tr>
+                    <td><img style="width: 125px; height: 125px;" src="./img/turtle.png" title="Turtle"></td>
+                    <td><img style="width: 125px; height: 125px;" src="./img/mushroom.png" title="Mushroom"></td>
+                    <td><img style="width: 125px; height: 125px;" src="./img/turtle.png" title="Turtle"></td>
+                    <td><img id="imgRandom" style="width: 125px; height: 125px;" src="./img/coin.png" title=""></td>
+                </tr>
+            </table>
+            <div class="d-flex flex-column" id="imgGrande">
+                <span class="fw-bold mb-3 bg-danger rounded-2 w-25 text-center"></span>
+                <img id="imagenGrande" class="rounded-2" width="350px" height="350px" src="">
+            </div>
+            <div id="titulo" class="bg-danger rounded-2" style="display:none">
+                <span class="fw-bold">Historial de selecciones:</span>
+                <ol id="lista">
+                    
+                </ol>
+            </div>
+        </section>
+    </section>
+</body>
+<script src="./jquery-3.6.1.min.js"></script>
+<script src="./functions.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+    crossorigin="anonymous"></script>
+</html>
