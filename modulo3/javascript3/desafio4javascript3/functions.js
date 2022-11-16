@@ -16,6 +16,9 @@ arrImg.push(img7)
 let img8 = new Imagen("8")
 arrImg.push(img8)
 
+
+var fecha1;
+var fecha2;
 var timer;
 var tiempo;
 var tiempoSeg;
@@ -25,7 +28,9 @@ var matches = []
 
 $(document).ready(() => {
     //On click del boton Iniciar Partida
-    $("#btnIniciar").click(function () {  
+    $("#btnIniciar").click(function () { 
+        fecha1 = (new Date()).getTime()
+
         //Se crean los arreglos para los números aleatorios y se usa sort()
         var indexRandom1 = [0, 1, 2, 3, 4, 5, 6, 7];
         indexRandom1 = indexRandom1.sort(() => Math.random() - 0.5);
@@ -94,6 +99,8 @@ $(document).ready(() => {
                         //Si matches tiene una longitud de 8, significa que se han hecho todos los matches posibles, por lo que se gana
                         //el juego
                         if (matches.length == 8){
+                            fecha2 = (new Date()).getTime()
+                            tiempo = fecha2 - fecha1
                             $("#gano").fadeIn(400)
                             $("#acerto").fadeOut(250);
                             //Se detiene el contador de tiempo
@@ -103,13 +110,19 @@ $(document).ready(() => {
                             var mejorTiempo = localStorage.getItem("tiempo")
                             if(mejorTiempo == undefined){
                                 localStorage.setItem("tiempo", tiempo)
-                                $("#mejor").html(`<span><b>Mejor Tiempo: 0seg.</b></span>`)
                             }else if (tiempo < mejorTiempo)
                                 localStorage.setItem("tiempo", tiempo) 
                             if(mejorTiempo > 0){
-                                $("#mejor").html(`<span><b>Mejor Tiempo: ${mejorTiempo}seg.</b></span>`)
+                                let dias = tiempo/(60*1000*60*24)
+                                let hrs = (dias - Math.floor(dias))*24
+                                let min = (hrs - Math.floor(hrs))*60
+                                let seg = (min - Math.floor(min))*60
+
+                                $("#mejor").html(`<span><b>Mejor Tiempo:<br> 
+                                ${Math.floor(hrs)}:${Math.floor(min)}:${Math.floor(seg)}</b></span>`)
                                 $("#mejor").fadeIn(400);
-                            }
+                            }else
+                            $("#mejor").html(`<span><b>Mejor Tiempo: </b></span>`)
                         }  
                         
                     }
@@ -200,11 +213,7 @@ function contador() {
         if (minutos < 10) { minutos = '0' + minutos; }
         if (segundos < 10) { segundos = '0' + segundos; }
 
-        tiempo = z;
-
-        tiempoSeg = segundos;
-        tiempoMin = minutos;
-        tiempoHrs = horas;
+        // tiempo = z;
 
         $("#tiempo").text(`${horas}:${minutos}:${segundos}`)
     },1000)
