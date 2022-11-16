@@ -1,0 +1,881 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Desafío 1</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-white shadow-sm">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"><img src="./img/facebook-logo.svg" style="width: 40px;"></a>
+                <form class="d-flex" role="search">
+                    <input id="searchIcon" class="form-control me-2 rounded-pill" type="search"
+                        placeholder="🔎 Buscar en Facebook" aria-label="Search">
+                </form>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+                    aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-center" id="navbarScroll">
+                    <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll justify-content-end"
+                        style="--bs-scroll-height: 100px; width: 70%;">
+                        <li class="nav-item dropdown px-4">
+                            <a class="nav-link dropdown-toggle a-center" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <ion-icon name="home-outline" size="large"></ion-icon>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Cosas</a></li>
+                                <li><a class="dropdown-item" href="#">Otras Cosas</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Más Cosas</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown px-4">
+                            <a id="play" class="nav-link a-center" href="#" role="button">
+                                <div class="position-relative">
+                                    <ion-icon name="play-circle-outline" size="large"></ion-icon>
+                                    <div
+                                        class="btn btn-danger btn-sm text-white position-absolute top-0 start-100 translate-middle rounded-pill">
+                                        9+</div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown px-4">
+                            <a class="nav-link dropdown-toggle a-center" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <ion-icon name="storefront-outline" size="large"></ion-icon>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Cosas</a></li>
+                                <li><a class="dropdown-item" href="#">Otras Cosas</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Más Cosas</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown px-4">
+                            <a class="nav-link dropdown-toggle a-center" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <ion-icon name="people-circle-outline" size="large"></ion-icon>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Cosas</a></li>
+                                <li><a class="dropdown-item" href="#">Otras Cosas</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Más Cosas</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown px-4">
+                            <a class="nav-link dropdown-toggle a-center" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <ion-icon name="extension-puzzle-outline" size="large"></ion-icon>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Cosas</a></li>
+                                <li><a class="dropdown-item" href="#">Otras Cosas</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Más Cosas</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll justify-content-end"
+                        style="--bs-scroll-height: 100px; width: 50%;">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">
+                                <div class="d-flex flex-nowrap align-items-center">
+                                    <img class="rounded-circle" src="./img/yo.jpg"
+                                        style="width: 40px; height: 40px; object-fit: cover;">
+                                    <span class="fw-semibold ms-1">Freddy</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">
+                                <div class="d-flex align-items-center justify-content-center rounded-circle"
+                                    style="background-color: #D8DADF; width: 40px; height: 40px;"><img
+                                        src="./img/dots-menu.svg" style="width: 20px; height: 50%;"></div>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">
+                                <div class="position-relative">
+                                    <div class="d-flex align-items-center justify-content-center rounded-circle"
+                                        style="background-color: #D8DADF; width: 40px; height: 40px;"><img
+                                            src="./img/Facebook_Messenger-Black-Logo.wine.svg"
+                                            style="width: 20px; height: 50%;"></div>
+                                    <div
+                                        class="bg-danger text-white position-absolute top-0 start-100 translate-middle rounded-pill px-2">
+                                        1</div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">
+                                <div class="position-relative">
+                                    <div class="d-flex align-items-center justify-content-center rounded-circle"
+                                        style="background-color: #D8DADF; width: 40px; height: 40px;"><img
+                                            src="./img/bell-logo.png" style="width: 20px; height: 50%;"></div>
+                                    <div
+                                        class="btn btn-danger btn-sm text-white position-absolute top-0 start-100 translate-middle rounded-pill px-2">
+                                        20+</div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">
+                                <div class="d-flex align-items-center justify-content-center rounded-circle"
+                                    style="background-color: #D8DADF; width: 40px; height: 40px;"><img
+                                        src="./img/arrow-drop.png" style="width: 20px; height: 50%;"></div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section id="main" class="container-fluid mt-3 justify-content-around">
+            <div class="row">
+                <div id="left" class="d-none d-md-block col-md-3">
+                    <div class="d-flex flex-column">
+                        <div class="accordion accordion-flush" id="accordionFlushExample">
+                            <div class="accordion-item bg-transparent border-0">
+                                <h2 class="accordion-header" id="flush-headingOne">
+                                    <button class="accordion-button collapsed bg-transparent p-0" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#flush-collapseOne"
+                                        aria-expanded="false" aria-controls="flush-collapseOne">
+                                        <li class="list-group-item">
+                                            <div class="d-flex align-items-center mt-2 mb-4">
+                                                <img class="rounded-circle" src="./img/yo.jpg"
+                                                    style="width: 50px; height: 50px; object-fit: cover;">
+                                                <span class="fs-5 fw-semibold ms-2">Freddy Tomada</span>
+                                            </div>
+                                        </li>
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseOne" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body fw-semibold">
+                                        Mi perfil
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item bg-transparent border-0">
+                                <h2 class="accordion-header" id="flush-headingTwo">
+                                    <button class="accordion-button collapsed p-0 bg-transparent" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo"
+                                        aria-expanded="false" aria-controls="flush-collapseTwo">
+                                        <li class="list-group-item">
+                                            <div class="d-flex align-items-center mb-4">
+                                                <img src="./img/friends.png"
+                                                    style="width: 50px; height: 50px; object-fit: contain;">
+                                                <div class="d-flex flex-column ms-1">
+                                                    <span class="fs-5 fw-semibold ms-2">Amigos</span>
+                                                    <div class="d-flex text-info align-items-center">
+                                                        <div class="rounded-circle bg-primary"
+                                                            style="width: 10px; height:10px;"></div>
+                                                        <span class="ms-1">1 solicitud</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseTwo" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body fw-semibold">
+                                        Mis Amigos
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item bg-transparent border-0">
+                                <h2 class="accordion-header" id="flush-headingThree">
+                                    <button class="accordion-button collapsed p-0 bg-transparent" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#flush-collapseThree"
+                                        aria-expanded="false" aria-controls="flush-collapseThree">
+                                        <li class="list-group-item">
+                                            <div class="d-flex align-items-center mb-4">
+                                                <img class="rounded-circle" src="./img/groups.png"
+                                                    style="width: 50px; height: 50px; object-fit: cover;">
+                                                <span class="fs-5 fw-semibold ms-2">Grupos</span>
+                                            </div>
+                                        </li>
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseThree" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body fw-semibold">
+                                        Mis Grupos
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item bg-transparent border-0">
+                                <h2 class="accordion-header" id="flush-headingFour">
+                                    <button class="accordion-button collapsed p-0 bg-transparent" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#flush-collapseFour"
+                                        aria-expanded="false" aria-controls="flush-collapseFour">
+                                        <li class="list-group-item">
+                                            <div class="d-flex align-items-center mb-4">
+                                                <img class="rounded-circle" src="./img/marketplace.png"
+                                                    style="width: 50px; height: 50px; object-fit: cover;">
+                                                <span class="fs-5 fw-semibold ms-2">Marketplace</span>
+                                            </div>
+                                        </li>
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseFour" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body fw-semibold">
+                                        Buscar en Marketplace
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item bg-transparent border-0">
+                                <h2 class="accordion-header" id="flush-headingFive">
+                                    <button class="accordion-button collapsed p-0 bg-transparent" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#flush-collapseFive"
+                                        aria-expanded="false" aria-controls="flush-collapseFive">
+                                        <li class="list-group-item">
+                                            <div class="d-flex align-items-center mb-4">
+                                                <img src="./img/watch.png"
+                                                    style="width: 50px; height: 50px; object-fit: contain;">
+                                                <div class="d-flex flex-column ms-1">
+                                                    <span class="fs-5 fw-semibold ms-2">Watch</span>
+                                                    <div class="d-flex text-info align-items-center">
+                                                        <div class="rounded-circle bg-primary"
+                                                            style="width: 10px; height:10px;"></div>
+                                                        <span class="ms-1">1 solicitud</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseFive" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body fw-semibold">
+                                        Mirar lo más nuevo
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item bg-transparent border-0">
+                                <h2 class="accordion-header" id="flush-headingSix">
+                                    <button class="accordion-button collapsed p-0 bg-transparent" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#flush-collapseSix"
+                                        aria-expanded="false" aria-controls="flush-collapseSix">
+                                        <li class="list-group-item">
+                                            <div class="d-flex align-items-center mb-4">
+                                                <img class="rounded-circle" src="./img/clock.png"
+                                                    style="width: 50px; height: 50px; object-fit: cover;">
+                                                <span class="fs-5 fw-semibold ms-2">Recuerdos</span>
+                                            </div>
+                                        </li>
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseSix" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingSix" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body fw-semibold">
+                                        Mis Recuerdos
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item bg-transparent border-0">
+                                <h2 class="accordion-header" id="flush-headingSeven">
+                                    <button class="accordion-button collapsed p-0 bg-transparent" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#flush-collapseSeven"
+                                        aria-expanded="false" aria-controls="flush-collapseSeven">
+                                        <li class="list-group-item">
+                                            <div class="d-flex align-items-center mb-4">
+                                                <img class="rounded-circle" src="./img/save.png"
+                                                    style="width: 50px; height: 50px; object-fit: cover;">
+                                                <span class="fs-5 fw-semibold ms-2">Guardado</span>
+                                            </div>
+                                        </li>
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseSeven" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingSeven" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body fw-semibold">Ver Contenido Guardado</div>
+                                </div>
+                            </div>
+                            <div class="accordion-item bg-transparent border-0">
+                                <h2 class="accordion-header" id="flush-headingEight">
+                                    <button class="accordion-button collapsed p-0 bg-transparent" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#flush-collapseEight"
+                                        aria-expanded="false" aria-controls="flush-collapseEight">
+                                        <li class="list-group-item">
+                                            <div class="d-flex align-items-center mb-4">
+                                                <img src="./img/flag.png"
+                                                    style="width: 50px; height: 50px; object-fit: contain;">
+                                                <div class="d-flex flex-column">
+                                                    <span class="fs-5 fw-semibold ms-4">Páginas</span>
+                                                    <div class="d-flex text-info align-items-center">
+                                                        <div class="rounded-circle bg-primary"
+                                                            style="width: 10px; height:10px;"></div>
+                                                        <span class="ms-1">+9 actualizaciones</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseEight" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingEight" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body fw-semibold">Ver mis páginas</div>
+                                </div>
+                            </div>
+                            <div class="accordion-item bg-transparent border-0">
+                                <h2 class="accordion-header" id="flush-headingNine">
+                                    <button class="accordion-button collapsed p-0 bg-transparent" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#flush-collapseNine"
+                                        aria-expanded="false" aria-controls="flush-collapseNine">
+                                        <li class="list-group-item">
+                                            <div class="d-flex align-items-center mb-4">
+                                                <img src="./img/calendar.png"
+                                                    style="width: 50px; height: 50px; object-fit: contain;">
+                                                <div class="d-flex flex-column">
+                                                    <span class="fs-5 fw-semibold ms-2">Eventos</span>
+                                                    <div class="d-flex text-info align-items-center">
+                                                        <div class="rounded-circle bg-primary"
+                                                            style="width: 10px; height:10px;"></div>
+                                                        <span class="ms-1">1 notificación</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseNine" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingNine" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body fw-semibold">Eventos Próximos</div>
+                                </div>
+                            </div>
+                            <div class="accordion-item bg-transparent border-0">
+                                <h2 class="accordion-header" id="flush-headingTen">
+                                    <button class="accordion-button collapsed p-0 bg-transparent" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#flush-collapseTen"
+                                        aria-expanded="false" aria-controls="flush-collapseTen">
+                                        <li class="list-group-item">
+                                            <div class="d-flex align-items-center mb-4">
+                                                <img class="rounded-circle" src="./img/briefcase.png"
+                                                    style="width: 50px; height: 50px; object-fit: cover;">
+                                                <span class="fs-5 fw-semibold ms-2">Empleos</span>
+                                            </div>
+                                        </li>
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseTen" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingTen" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body fw-semibold">Empleos Cercanos</div>
+                                </div>
+                            </div>
+                            <div class="accordion-item bg-transparent border-0">
+                                <h2 class="accordion-header" id="flush-headingEleven">
+                                    <button class="accordion-button collapsed p-0 bg-transparent" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#flush-collapseEleven"
+                                        aria-expanded="false" aria-controls="flush-collapseEleven">
+                                        <li class="list-group-item">
+                                            <div class="d-flex align-items-center mb-4">
+                                                <div class="d-flex align-items-center justify-content-center rounded-circle"
+                                                    style="background-color: #D8DADF; width: 50px; height: 50px;"><img
+                                                        src="./img/arrow-drop.png" style="width: 30px; height: 80%;">
+                                                </div>
+                                                <span class="fs-5 fw-semibold ms-2">Ver Más</span>
+                                            </div>
+                                        </li>
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseEleven" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingEleven" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body fw-semibold">Otras Cosas</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+                <div id="center" class="col-12 col-md-5 container-fluid container-md">
+                    <div id="stories" class="row justify-content-center">
+                        <div id="carouselExampleControls" class="carousel" data-bs-ride="carousel">
+                            <div class="carousel-inner h-100">
+                                <div class="carousel-item active">
+                                    <div data-bs-toggle="modal" data-bs-target="#modal1" class="card card-carousel">
+                                        <img src="./img/yo.jpg" class="card-img-top h-75">
+                                        <div class="card-body text-center">
+                                          <h5 class="card-title fw-bold">Crea una historia</h5>
+                                        </div>   
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div data-bs-toggle="modal" data-bs-target="#modal2" class="card text-bg-dark card-carousel">
+                                        <img src="./img/paisaje-1.webp" class="card-img">
+                                        <div class="card-img-overlay d-flex flex-column justify-content-between">
+                                            <div class="rounded-circle align-self-start mt-3 card-title"
+                                                style="border: 5px solid #0D6EFD; object-fit: cover;"><img
+                                                    class="rounded-circle" style="width: 40px; height: 40px;"
+                                                    src="./img/hombre1.webp"></div>
+                                            <p class="text-white fw-bold">Pedro Pérez</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div data-bs-toggle="modal" data-bs-target="#modal3" class="card text-bg-dark card-carousel">
+                                        <img src="./img/paisaje-2.webp" class="card-img">
+                                        <div class="card-img-overlay d-flex flex-column justify-content-between">
+                                            <div class="rounded-circle align-self-start mt-3 card-title"
+                                                style="border: 5px solid #0D6EFD; object-fit: cover;"><img
+                                                    class="rounded-circle" style="width: 40px; height: 40px;"
+                                                    src="./img/mujer1.jpg"></div>
+                                            <p class="text-white fw-bold">María Gomez</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div data-bs-toggle="modal" data-bs-target="#modal4" class="card text-bg-dark card-carousel">
+                                        <img src="./img/paisaje-3.webp" class="card-img">
+                                        <div class="card-img-overlay d-flex flex-column justify-content-between">
+                                            <div class="rounded-circle align-self-start mt-3 card-title"
+                                                style="border: 5px solid #0D6EFD; object-fit: cover;"><img
+                                                    class="rounded-circle" style="width: 40px; height: 40px;"
+                                                    src="./img/hombre2.jpg"></div>
+                                            <p class="text-white fw-bold">Nacho Vidal</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div data-bs-toggle="modal" data-bs-target="#modal5" class="card text-bg-dark card-carousel">
+                                        <img src="./img/paisaje-4.webp" class="card-img">
+                                        <div class="card-img-overlay d-flex flex-column justify-content-between">
+                                            <div class="rounded-circle align-self-start mt-3 card-title"
+                                                style="border: 5px solid #0D6EFD; object-fit: cover;"><img
+                                                    class="rounded-circle" style="width: 40px; height: 40px;"
+                                                    src="./img/mujer2.webp"></div>
+                                            <p class="text-white fw-bold">Rosa Rosales</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div data-bs-toggle="modal" data-bs-target="#modal2" class="card text-bg-dark card-carousel">
+                                        <img src="./img/paisaje-1.webp" class="card-img">
+                                        <div class="card-img-overlay d-flex flex-column justify-content-between">
+                                            <div class="rounded-circle align-self-start mt-3 card-title"
+                                                style="border: 5px solid #0D6EFD; object-fit: cover;"><img
+                                                    class="rounded-circle" style="width: 40px; height: 40px;"
+                                                    src="./img/hombre1.webp"></div>
+                                            <p class="text-white fw-bold">Pedro Pérez</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div data-bs-toggle="modal" data-bs-target="#modal3" class="card text-bg-dark card-carousel">
+                                        <img src="./img/paisaje-2.webp" class="card-img">
+                                        <div class="card-img-overlay d-flex flex-column justify-content-between">
+                                            <div class="rounded-circle align-self-start mt-3 card-title"
+                                                style="border: 5px solid #0D6EFD; object-fit: cover;"><img
+                                                    class="rounded-circle" style="width: 40px; height: 40px;"
+                                                    src="./img/mujer1.jpg"></div>
+                                            <p class="text-white fw-bold">María Gomez</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div data-bs-toggle="modal" data-bs-target="#modal4" class="card text-bg-dark card-carousel">
+                                        <img src="./img/paisaje-3.webp" class="card-img">
+                                        <div class="card-img-overlay d-flex flex-column justify-content-between">
+                                            <div class="rounded-circle align-self-start mt-3 card-title"
+                                                style="border: 5px solid #0D6EFD; object-fit: cover;"><img
+                                                    class="rounded-circle" style="width: 40px; height: 40px;"
+                                                    src="./img/hombre2.jpg"></div>
+                                            <p class="text-white fw-bold">Nacho Vidal</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div data-bs-toggle="modal" data-bs-target="#modal5" class="card text-bg-dark card-carousel">
+                                        <img src="./img/paisaje-4.webp" class="card-img">
+                                        <div class="card-img-overlay d-flex flex-column justify-content-between">
+                                            <div class="rounded-circle align-self-start mt-3 card-title"
+                                                style="border: 5px solid #0D6EFD; object-fit: cover;"><img
+                                                    class="rounded-circle" style="width: 40px; height: 40px;"
+                                                    src="./img/mujer2.webp"></div>
+                                            <p class="text-white fw-bold">Rosa Rosales</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                              </button>
+                            <button class="carousel-control-next" type="button"
+                                data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div id="card-main" class="row justify-content-center rounded-4 mt-2 bg-white shadow-sm">
+                        <div class="card text-center py-4 card-main">
+                            <div class="card-header bg-transparent border-0">
+                                <div class="container-fluid">
+                                    <div class="d-flex justify-content-between">
+                                        <div class="d-flex">
+                                            <div class="position-relative h-75">
+                                                <img class="rounded-circle" src="./img/yo.jpg"
+                                                    style="width: 40px; height: 40px; object-fit: cover;">
+                                                <div class="position-absolute bottom-0 end-0">
+                                                    <div style="width: 12px; height: 12px;"
+                                                        class="bg-success rounded-circle"></div>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex flex-column ms-3">
+                                                <span class="fw-bold">Eduardo Mejias Ávila</span>
+                                                <div class="d-flex align-items-center">
+                                                    <span style="font-size: 12px;" class="text-muted">27 de
+                                                        Agosto</span>
+                                                    <div style="width: 5px; height: 5px;"
+                                                        class="bg-secondary rounded-circle mx-2"></div>
+                                                    <button class="border-0 bg-transparent">
+                                                        <ion-icon class="text-muted" name="people" size="small">
+                                                        </ion-icon>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-2">
+                                            <ion-icon class="text-muted" name="ellipsis-horizontal" size="large">
+                                            </ion-icon>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-3 ms-3 text-start">
+                                    <span>Ya reiniciamos.</span>
+                                </div>
+                                <div class="ms-3 text-start">
+                                    <span>Vamos con dios, vamos con todo. 💪</span>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <img class="card-img" src="./img/imgCard.jpg">
+                                <div class="d-flex align-items-center my-3">
+                                    <img style="width: 30px; height:30px;" src="./img/fb-like.png" alt="fb-like">
+                                    <span class="text-muted ms-2">María Alejandra Pereira</span>
+                                </div>
+                            </div>
+                            <div class="card-footer bg-transparent">
+                                <div class="d-flex align-items-center justify-content-around">
+                                    <button class="border-0 bg-transparent">
+                                        <img style="width: 30px; height:30px;" src="./img/fb-like-white.png"
+                                            alt="fb-like">
+                                        <span class="text-muted ms-2">Me gusta</span>
+                                    </button>
+                                    <button class="border-0 bg-transparent">
+                                        <img style="width: 30px; height:30px;" src="./img/fb-comment.png"
+                                            alt="fb-comment">
+                                        <span class="text-muted ms-2">Comentar</span>
+                                    </button>
+                                    <button class="border-0 bg-transparent">
+                                        <img style="width: 30px; height:30px;" src="./img/share.png" alt="fb-share">
+                                        <span class="text-muted ms-2">Compartir</span>
+                                    </button>
+                                </div>
+                                <hr>
+                                <div class="d-flex align-items-center mt-3">
+                                    <div class="position-relative">
+                                        <img class="rounded-circle" src="./img/yo.jpg"
+                                            style="width: 40px; height: 40px; object-fit: cover;">
+                                        <div class="position-absolute bottom-0 end-0">
+                                            <div style="width: 12px; height: 12px;" class="bg-success rounded-circle">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <form style="width: 100%;">
+                                        <div class="ms-3">
+                                            <input type="text" class="form-control rounded-pill" id="comment"
+                                                placeholder="Escribe un comentario...">
+                                        </div>
+                                    </form>
+                                    <div class="position-relative">
+                                        <div
+                                            class="d-flex align-items-center justify-content-around position-absolute top-50 end-0 translate-middle-y">
+                                            <ion-icon class="text-muted fs-4" name="happy-outline"></ion-icon>
+                                            <ion-icon class="text-muted fs-4" name="camera-outline"></ion-icon>
+                                            <ion-icon class="text-muted fs-4" name="newspaper-outline"></ion-icon>
+                                            <ion-icon class="text-muted fs-4" name="image-outline"></ion-icon>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="height:auto;" class="row justify-content-center rounded-4 mt-4 bg-white shadow-sm">
+                        <div class="col-12 bg-white rounded-4 justify-content-center">
+                            <form action="" method="get" id="datos" class="p-5 needs-validation" novalidate>
+                                <div class="mb-3 row">
+                                    <div class="col-auto">
+                                        <label for="nombre" class="form-label fw-bold">Nombre: </label>
+                                    </div>
+                                    <div class="col-9">
+                                        <input id="nombre" class="form-control" type="text" name="nombre"
+                                            placeholder="Nombre" required>
+                                        <div class="invalid-feedback">
+                                            Please enter your Name
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3 row">
+                                    <div class="col-auto">
+                                        <label for="password" class="form-label fw-bold">Password: </label>
+                                    </div>
+                                    <div class="col-auto">
+                                        <input name="password" type="password" class="form-control" id="password"
+                                            placeholder="Password" required>
+                                        <div class="invalid-feedback">
+                                            Please enter the password
+                                        </div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <span id="passwordHelpInline" class="form-text">
+                                            Must be long than 4 characters long
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="mb-3 row">
+                                    <div class="col-auto">
+                                        <label for="email" class="form-label fw-bold">Email: </label>
+                                    </div>
+                                    <div class="col-9">
+                                        <input name="correo" type="email" class="form-control" id="email"
+                                            aria-describedby="emailHelp" placeholder="Email" required>
+                                        <div class="invalid-feedback">
+                                            Please put an email.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3 form-check">
+                                    <input name="check" type="checkbox" class="form-check-input" id="check" required>
+                                    <label class="form-check-label" for="check">Acepta los términos y
+                                        Condiciones</label>
+                                    <div class="invalid-feedback">
+                                        You must agree before submitting.
+                                    </div>
+                                </div>
+                                <div class="row justify-content-center">
+                                    <div class="col text-center">
+                                        <button id="btnAceptar" type="submit"
+                                            class="btn btn-success btn-lg">Aceptar</button>
+                                    </div>
+                                    <div class="col text-center">
+                                        <button type="submit" class="btn btn-danger btn-lg">Cancelar</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div id="right" class="d-none d-md-block col-md-3">
+                    <div class="container bg-white rounded-3 p-3 shadow">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <div class="d-flex align-items-center">
+                                <img style="width: 25px; height:25px;" src="./img/friends.png">
+                                <span class="fs-5 fw-semibold ms-2">Solicitudes de Amistad</span>
+                            </div>
+                            <img style="width: 25px; height:25px;" src="./img/points.png">
+                        </div>
+                        <div class="row">
+                            <div class="col-3 d-flex justify-content-center"><img class="rounded-circle"
+                                    style="width: 70px; height:70px; object-fit: cover;" src="./img/hombre1.webp"></div>
+                            <div class="col-9">
+                                <div class="d-flex justify-content-between">
+                                    <span class="fs-5 fw-semibold">Mario Castañeda</span>
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-2 text-info">1 sem.</span>
+                                        <div class="rounded-circle bg-primary" style="width: 10px; height:10px;"></div>
+                                    </div>
+                                </div>
+                                <div class="d-flex mt-2 mb-3">
+                                    <div class="d-flex">
+                                        <img class="rounded-circle" style="width: 25px; height:25px;"
+                                            src="./img/hombre2.jpg">
+                                        <img class="rounded-circle" style="width: 25px; height:25px;"
+                                            src="./img/mujer1.jpg">
+                                    </div>
+                                    <span class="text-muted ms-2">10 amigos en común</span>
+                                </div>
+                                <div class="d-flex d-xl-none">
+                                    <button class="btn btn-sm btn-primary text-white fw-bold" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#collapseBtn" aria-expanded="false"
+                                        aria-controls="collapseBtn">Confirmar</button>
+                                    <button style="background-color: #D8DADF;" class="btn btn-sm fw-bold" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#collapseBtn" aria-expanded="false"
+                                        aria-controls="collapseBtn">Eliminar</button>
+                                </div>
+                                <div class="d-none d-xl-flex justify-content-around">
+                                    <button class="btn btn-lg btn-primary text-white fw-bold" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#collapseBtn" aria-expanded="false"
+                                        aria-controls="collapseBtn">Confirmar</button>
+                                    <button style="background-color: #D8DADF;" class="btn btn-lg fw-bold" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#collapseBtn" aria-expanded="false"
+                                        aria-controls="collapseBtn">Eliminar</button>
+                                </div>
+                                <div class="collapse m-3" id="collapseBtn">
+                                    <div class="card card-body p-1 text-center fw-semibold">
+                                        Are you sure?
+                                        <div class="d-flex align-items-center justify-content-around mt-2">
+                                            <button class="btn btn-sm btn-primary">Yes</button>
+                                            <button class="btn btn-sm btn-secondary">No</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="d-flex flex-column">
+                        <h4 class="text-muted fw-bold">Publicidad</h1>
+                            <div class="d-flex my-4 align-items-center justify-content-around">
+                                <img class="rounded-4" style="object-fit: cover; width: 40%; height: 100%;"
+                                    src="./img/publi1.webp">
+                                <div class="d-flex flex-column ms-1">
+                                    <p class="fw-bold fs-5">Fast Food Now! Order!</p>
+                                    <span class="text-muted">www.burguer.com</span>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center justify-content-around">
+                                <img class="rounded-4" style="object-fit: cover; width: 40%; height: 100%;"
+                                    src="./img/publi2.webp">
+                                <div class="d-flex flex-column ms-1">
+                                    <p class="fw-bold fs-5">Get Your Burguer NOW!</p>
+                                    <span class="text-muted">www.burguer.com</span>
+                                </div>
+                            </div>
+                    </div>
+                    <hr>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- MODALS -->
+    <div class="modal fade" id="modal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content border-0">
+            <div class="modal-header border-0">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Crea una Historia</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body border-0">
+              <img src="./img/yo.jpg" class="w-100">
+            </div>
+            <div class="modal-footer border-0">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="modal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+          <div class="modal-content border-0">
+            <div class="modal-header border-0">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Historia de Pedro Pérez: </h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body border-0">
+                <img src="./img/paisaje-1.webp" class="w-100">
+            </div>
+            <div class="modal-footer border-0">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="modal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+          <div class="modal-content border-0">
+            <div class="modal-header border-0">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Historia de María Gomez:</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body border-0">
+              <img src="./img/paisaje-2.webp" class="w-100">
+            </div>
+            <div class="modal-footer border-0">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="modal4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+          <div class="modal-content border-0">
+            <div class="modal-header border-0">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Historia de Nacho Vidal:</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body border-0">
+              <img src="./img/paisaje-3.webp" class="w-100">
+            </div>
+            <div class="modal-footer border-0">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="modal5" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+          <div class="modal-content border-0">
+            <div class="modal-header border-0">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Historia de Rosa Rosales:</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body border-0">
+              <img src="./img/paisaje-4.webp" class="w-100">
+            </div>
+            <div class="modal-footer border-0">
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <!-- SCRIPTS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script defer src="./jquery-3.6.1.min.js"></script>
+    <script defer src="./function.js"></script>
+    <script>
+        (() => {
+            'use strict'
+
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            const forms = document.querySelectorAll('.needs-validation')
+
+            // Loop over them and prevent submission
+            Array.from(forms).forEach(form => {
+                form.addEventListener('submit', event => {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+
+                    form.classList.add('was-validated')
+                }, false)
+            })
+        })()
+    </script>
+</body>
+
+</html>

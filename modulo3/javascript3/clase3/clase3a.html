@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JSON. Parte 1</title>
+</head>
+<body>
+    <h1>Practicando JSON</h1>
+    <script>
+        var empresas = {
+            "arreglo":[
+                {
+                    "nombre":"EPA",
+                    "url":"http://epa.ve"
+                },
+                {
+                    "nombre":"Hiperlider",
+                    "url":"http://hiperlider.com.ve"
+                },
+                {
+                    "nombre":"Cadi F1",
+                    "url":"http://cadif1.com"
+                }
+            ]
+        }
+        console.log(empresas.arreglo[0].nombre)
+
+        var empresas2 = [
+            {
+                "nombre":"EPA",
+                "url":"http://epa.ve",
+                "abreLosDomingos":true
+            },
+            {
+                "nombre":"Hiperlider",
+                "url":"http://hiperlider.com.ve",
+                "abreLosDomingos":true
+            },
+            {
+                "nombre":"Cadi F1",
+                "url":"http://cadif1.com",
+                "abreLosDomingos":false
+            }
+        ]
+        console.log("las empresas que abren los domingos son:")
+        for (let i=0;i<empresas2.length;i++)
+            if (empresas2[i].abreLosDomingos)
+                console.log(`${i+1} - ${empresas2[i].nombre}`)
+
+        console.log(empresas2[0].nombre)
+
+        var alumno = {
+            "nombre":"jose l rojas d",
+            "correo":"joselrojas@cadif1.com",
+            "fechaNacimiento": {
+                "dia":11,
+                "mes":1,
+                "año":80
+            },
+            "titulos":[
+                {
+                    "nombre":"Bachiller en Ciencias",
+                    "año":1994,
+                    "institucion":{
+                        "nombre":"Bujanda",
+                        "pais":"Venezuela"
+                    }
+                },  
+                {
+                    "nombre":"Ing. en Informatica",
+                    "año":2004,
+                    "institucion":{
+                        "nombre":"UCLA",
+                        "pais":"Venezuela"
+                    }
+                },
+                {
+                    "nombre":"Msc Ciencias de la Computacion",
+                    "año":2013,
+                    "institucion":{
+                        "nombre":"UCLA",
+                        "pais":"Venezuela"
+                    }
+                }
+            ],
+            "hijos":[
+                {
+                    "nombre":"luisito",
+                    "edad":2
+                },
+                {
+                    "nombre":"blanca",
+                    "edad":6
+                }
+            ]
+        }
+        console.log(`El nombre del alumno es ${alumno.nombre} y el correo
+                    ${alumno.correo}. Nacio en el año ${alumno.fechaNacimiento.año}
+                    su ultimo titulo fue ${alumno.titulos[alumno.titulos.length-1].nombre}
+                    en el año ${alumno.titulos[alumno.titulos.length-1].año}
+                    tiene ${alumno.hijos.length} hijos y
+                    la edad del primer hijo es ${alumno.hijos[0].edad} años`)
+    </script>
+</body>
+</html>

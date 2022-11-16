@@ -1,0 +1,24 @@
+table img:hover{
+    cursor: pointer;
+}
+.seleccionada{
+    border: 3px solid salmon;
+}
+table img, #imagenGrande{
+    display:none;
+}
+img{
+    background-color: white;
+}
+#main{
+    background-image: url(./img/super-mario-bros-cover.webp);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+#titulo{
+    height: 250px;
+}
+table{
+    background-image: url(./img/brick-background.jpg);
+}

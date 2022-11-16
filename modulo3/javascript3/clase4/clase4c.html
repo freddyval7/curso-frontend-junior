@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Faltan:</h1>
+    <h2></h2>
+</body>
+<script src="../jquery-3.6.1.min.js"></script>
+<script>
+    $(document).ready(()=>{
+        let momentoMundial = (new Date(2022,10,20,12,00)).getTime()
+        setInterval(()=>{
+            let actual = (new Date()).getTime()
+            let faltan = momentoMundial - actual;
+
+            let dias = faltan/(60*1000*60*24)
+            let horas = (dias - Math.floor(dias))*24
+            let minutos = (horas - Math.floor(horas))*60
+            let segundos = (minutos - Math.floor(minutos))*60
+            
+            $("h2").text(`${Math.floor(dias)} dias, ${Math.floor(horas)} horas, 
+                        ${Math.floor(minutos)} minutos, ${Math.floor(segundos)} segundos`)
+        },1000)
+
+    })
+</script>
+</html>

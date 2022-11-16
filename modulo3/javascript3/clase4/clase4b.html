@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Capitulo 12</title>
+</head>
+<body>
+    <h1>Práctica de Storage</h1>
+    <div id="contenedor">
+        <h2>Registro</h2>
+        <form name="registro">
+            Nombre completo<input type="text" name="nombre" /><br>
+            Correo <input type="text" name="correo" /><br>
+            Clave <input type="password" name="clave" /><br><br>
+            <input id="btn-registrar" type="button" value="Registrar" />
+        </form>
+        <div id="mensaje" style="display: none">
+            Se registro exitosamente
+        </div>
+        <h2>Inicio de sesión</h2>
+        <form name="inicio">
+            Correo <input type="text" name="correo" /><br>
+            Clave <input type="password" name="clave" /><br><br>
+            <input id="btn-iniciar-sesion" type="button" value="Iniciar sesión" />
+            <span id="error" style="display: none;">Usuario o clave incorrectos</span>
+        </form>
+    </div>
+    <div id="main" style="display: none">
+        <h1>Bienvenido <span id="usuario-autenticado"></span></h1>
+        <a id="cerrar-session" href="#">Cerrar sesión</a>
+        <span id="inactivo"></span>
+    </div>
+    <script src="../jquery-3.6.1.min.js"></script>
+    <script>
+        let usuarios = [];
+        // leyendo el valor de la cookie
+        let valorCookie = localStorage.getItem("usuarios");
+
+        // si la variable tiene el valor undefined es porque la cookie no existe
+        // lo que significa que aun no se registra ningun usuario
+        if (valorCookie != undefined)
+            try{
+                usuarios = JSON.parse(valorCookie)
+            }catch(e){
+                console.log("Error al intentar recuperar los usuarios de la cookie")
+            }
+
+        
+        $(document).ready(()=>{
+            let n=0
+            let x;
+            let tiempoInactividad = 0;
+
+            function activarContador(){
+                x = setInterval(()=>{
+                    n++;
+                    document.title=n
+                    if (n==10){
+                        document.bgColor="yellow"
+                    }
+                },1000)
+            }
+            
+            activarContador()
+
+            $(document).click(()=>{
+                // para de ejecutar el codigo asociado a la variable "interval"
+                tiempoInactividad=0;
+                if (x == undefined)
+                    activarContador();
+                else{
+                    clearInterval(x)
+                    x=undefined;
+                }
+            })
+
+            // se agrega al arreglo un primer objeto con valores arbitrarios
+            if (usuarios.length == 0)
+                usuarios.push(new Usuario("jose","jose@gmail.com","987654"))
+
+            $("#cerrar-session").click(cerrarSesion)
+
+            function cerrarSesion(){
+                sessionStorage.removeItem("autenticado")
+                $("#main").hide()
+                $("#contenedor").show()
+                clearInterval(intervalSesion)                    
+            }
+
+            let correoUsuarioAutenticado= sessionStorage.getItem("autenticado")
+            if (correoUsuarioAutenticado != undefined){
+                // se llama a la funcion autenticar pasando por parametro
+                // el dato obtenido del sessionstorage decodificandolo de 
+                // base64 a string normal
+                let usuario = existe(atob(correoUsuarioAutenticado))
+                if (usuario){
+                    $("#contenedor").hide()
+                    $("#usuario-autenticado").text(usuario.nombre)
+                    $("#main").show()
+                }
+            }
+
+             $("#btn-iniciar-sesion").click(()=>{
+                let correo = document.inicio.correo.value
+                let usuario = existe(correo)
+                if (!usuario)
+                    $("#error").fadeIn(500).fadeOut(5000)
+                else{
+                    if (usuario.clave == document.inicio.clave.value){
+                        // se guarda en el sessionstorage el dato como base 64
+                        // usando btoa
+                        sessionStorage.setItem("autenticado",btoa(correo))
+                        $("#contenedor").hide()
+                        $("#usuario-autenticado").text(usuario.nombre)
+                        $("#main").show()
+                        intervalSesion = setInterval(()=>{
+                            tiempoInactividad++;
+                            $("#inactivo").text(`Tiempo inactivo ${tiempoInactividad} segundos`)
+                            if (tiempoInactividad == 20){
+                                cerrarSesion()
+                            }
+                        },1000)
+                    }else
+                        $("#error").fadeIn(500).fadeOut(5000)
+                }
+             })
+
+            $("#btn-registrar").click(()=>{
+                if (!todoValido()){
+                    $("#mensaje").text("hay datos invalidos")
+                    $("#mensaje").fadeIn(500).fadeOut(5000)
+                }else
+                    if (existe(document.registro.correo.value)){
+                        $("#mensaje").text("Ya esta registrado ")
+                        $("#mensaje").fadeIn(500).fadeOut(5000)
+                    }else                        
+                    {
+                        // se crea el objeto
+                        let obj = new Usuario(document.registro.nombre.value,
+                                        document.registro.correo.value,
+                                        document.registro.clave.value);
+                        // se agrega al arreglo el nuevo objeto
+                        usuarios.push(obj)
+                        // nombre del ultimo usuario registrado
+                        localStorage.setItem("ultimo-usuario",JSON.stringify(obj),
+                                    {expires:2, path: ''})
+                        localStorage.setItem("usuarios",JSON.stringify(usuarios),
+                                    {SameSite:"none"})
+
+                        $("#mensaje").text("Se registro exitosamente")
+                        $("#mensaje").fadeIn(500).fadeOut(5000)
+                        document.registro.reset()
+                    }
+            })
+        })
+        function existe(correo){
+            for (let i=0;i<usuarios.length;i++)
+                if (usuarios[i].correo.toUpperCase() == correo.toUpperCase())
+                    return usuarios[i];
+
+            return false;
+       }
+        // versión con parámetros
+        function Usuario(nombre,correo,clave){
+            this.nombre = nombre
+            this.correo = correo
+            this.clave = clave
+            this.saldo = Math.round(Math.random()*1000)
+            this.activo = false
+        }
+
+        // versión sin parámetros
+        /*function Usuario(){
+            this.nombre = document.datos.nombre.value
+            this.correo = document.datos.correo.value
+            this.clave = document.datos.clave.value
+            this.saldo = Math.round(Math.random()*1000)
+            this.activo = false
+        }*/
+
+ 
+        function todoValido(){
+            return true
+        }
+    </script>
+</body>
+</html>

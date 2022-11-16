@@ -10,29 +10,34 @@
 </head>
 
 <style>
-  .nav-item{
+  .nav-item {
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     box-sizing: border-box;
   }
-  .nav-item:hover{
+
+  .nav-item:hover {
     border-bottom: #0d6efd solid 3px;
   }
-  .nav-link:hover{
+
+  .nav-link:hover {
     color: #0d6efd;
   }
+
   .dropdown:hover .dropdown-menu {
     display: block;
     margin-top: 0;
     /* position: relative;
     top: 75px; */
   }
-  .dropdown-item{
+
+  .dropdown-item {
     font-weight: bold;
   }
-  .dropdown-item:hover{
+
+  .dropdown-item:hover {
     color: #0d6efd;
   }
 
@@ -59,6 +64,14 @@
       height: 307px;
     }
   }
+
+  .carousel-caption-a {
+    height: 75px;
+    position: relative;
+    top: -75px;
+    padding: 0;
+    background-color: #337a8d82;
+  }
 </style>
 
 <body>
@@ -74,7 +87,8 @@
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse justify-content-between bg-white" id="navbarSupportedContent" style="height: 115px;">
+        <div class="collapse navbar-collapse justify-content-between bg-white" id="navbarSupportedContent"
+          style="height: 115px;">
           <ul class="navbar-nav w-75 mb-2 mb-lg-0 justify-content-around" style="height: 100%;">
             <li class="nav-item">
               <a href="" class="nav-link fw-bold text-uppercase">characters</a>
@@ -193,26 +207,69 @@
   </header>
   <!-- MAIN -->
   <main>
-    <section id="carousel" class="d-none d-md-block"></section>
+    <section id="carousel" class="d-none d-md-block">
+      <div id="carouselMain" class="carousel slide" data-bs-ride="false" data-bs-config='{"delay":0, "interval":2000}'>
+        <!-- <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div> -->
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img
+              src="https://www.dc.com/sites/default/files/styles/gallery_image_1400x495/public/Movies-Marquee_BlackAdam_1012_63478d8f9807b2.02471984.jpg?itok=0Gahw8ZG"
+              class="d-block w-100" alt="c1">
+            <div class="carousel-caption-a d-none d-md-block">
+              <h5>First slide label</h5>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img
+              src="https://www.dc.com/sites/default/files/styles/gallery_image_1400x495/public/Movies-Marquee_BattleSuperSons_6348c21132f4b3.05157637.jpg?itok=T9bXF5GK"
+              class="d-block w-100" alt="c2">
+            <div class="carousel-caption-a d-none d-md-block">
+              <h5>Second slide label</h5>
+
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img
+              src="https://www.dc.com/sites/default/files/styles/gallery_image_1400x495/public/Movies-Marquee_SuperPets_InTheaters_628d593fed77c6.00030100.jpg?itok=5OW5liZr"
+              class="d-block w-100" alt="c3">
+            <div class="carousel-caption-a d-none d-md-block">
+              <h5>Third slide label</h5>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselMain" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselMain" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </section>
     <section id="available" class="container-fluid container-md">
       <div class="row">
         <div class="col-12 col-md-7">
           <div class="row">
             <div class="movieCard col-4">
-              <div
+              <div data-bs-toggle="modal" data-bs-target="#suicide"
                 style="height: 90%; background-image: url('https://www.dc.com/sites/default/files/styles/covers192x291/public/movie-covers/2021/07/Movies-Thumb_TheSuicideSquad2021_july_60e4812d558cd9.83560586.jpg?itok=17HNkwJ6'); background-repeat: no-repeat; background-size: contain; background-position: center; object-fit: contain;">
               </div>
               <p></p>
             </div>
             <div class="movieCard col-4">
-              <div
+              <div data-bs-toggle="modal" data-bs-target="#batman"
                 style="height: 90%; background-image: url('https://www.dc.com/sites/default/files/styles/covers192x291/public/movie-covers/2022/02/Movies-Thumb_TheBatman_2_6205b82ee37268.37925455.jpg?itok=m4YtT3W1'); background-repeat: no-repeat; background-size: contain; background-position: center; object-fit: contain;">
               </div>
               <p></p>
             </div>
             <div class="movieCard col-4">
-              <div
-                style="height: 90%; background-image: url('https://www.dc.com/sites/default/files/styles/covers192x291/public/movie-covers/2022/01/Movies-Thumb_CatwomanHunted_61f2317e76edb3.64731270.jpg?itok=1-ntVDI1'); background-repeat: no-repeat; background-size: contain; background-position: center; object-fit: contain;">
+              <div data-bs-toggle="modal" data-bs-target="#green"
+                style="height: 90%; background-image: url('https://www.dc.com/sites/default/files/styles/comics320x485/public/movie-covers/2022/07/Movies-Thumb_GreenLanternBMP_62df5b77ae46d9.10778744.jpg?itok=5F1U8hVk'); background-repeat: no-repeat; background-size: contain; background-position: center; object-fit: contain;">
               </div>
               <p></p>
             </div>
@@ -241,22 +298,159 @@
         </div>
       </div>
     </section>
-    <section id="blueBar">
-      <div class="d-flex flex-md-row flex-column"></div>
-      <div class="d-flex flex-md-row flex-column"></div>
-      <div class="d-flex flex-md-row flex-column"></div>
-      <div class="d-flex flex-md-row flex-column"></div>
+    <section id="blueBar" class="bg-primary p-5">
+      <ul class="list-group list-group-horizontal justify-content-between list-group-flush border-0">
+        <li class="list-group-item bg-transparent text-white border-0">
+          <img src="https://www.dc.com/sites/all/themes/dc_comics_bp/images/buy-bar-DCUI.svg" alt=""
+            class="h-75 align-items-center">
+          <span class="fs-6">DIGITAL COMICS</span>
+        </li>
+        <li class="list-group-item bg-transparent text-white border-0">
+          <img src="https://www.dc.com/sites/all/themes/dc_comics_bp/images/buy-bar-DCshop.svg" alt=""
+            class="h-75 align-items-center">
+          <span class="fs-6">DC MERCHANDISE</span>
+        </li>
+        <li class="list-group-item bg-transparent text-white border-0">
+          <img src="https://www.dc.com/sites/all/themes/dc_comics_bp/images/buy-bar-subscription.svg" alt=""
+            class="h-75 align-items-center">
+          <span class="fs-6">PRINT SUBSCRIPTIONS</span>
+        </li>
+        <li class="list-group-item bg-transparent text-white border-0">
+          <img src="https://www.dc.com/sites/all/themes/dc_comics_bp/images/buy-bar-locator.svg" alt=""
+            class="h-75 align-items-center">
+          <span class="fs-6">COMIC SHOP LOCATOR</span>
+        </li>
+      </ul>
     </section>
-    <section id="trailers">
-      <div id="menuTrailers"></div>
-      <div id="carouselTrailers" class="d-none d-md-block"></div>
-      <div id="listTrailers" class="d-block d-md-none"></div>
+    <section id="trailers" class="d-none d-md-block"
+      style="background-image: url('https://www.dc.com/sites/default/files/Movies-PlaylistBG_TheBatman_6185f4868026c0.73669633.jpg'); background-repeat: no-repeat; background-size: cover; object-fit: fill; padding: 200px; background-position: center;">
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="card h-100 border-0 bg-black">
+            <img
+              src="https://www.dc.com/sites/default/files/styles/video_playlists_hero/public/video/BatmanCastInt_thumb_62216bf8a35e57.67369379.jpg?itok=3XkJ-xXm"
+              class="card-img" alt="img">
+            <div class="card-img-overlay">
+              <h5 class="card-title text-white">BATMAN</h5>
+            </div>
+            <div class="card-body bg-black">
+              <p class="text-white fs-3">The Batman - Creating the world and characters</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="row">
+            <div class="col-6">
+              <div class="card border-0 bg-black h-100">
+                <img
+                  src="https://www.dc.com/sites/default/files/styles/video_playlists_thumb/public/video/BatmanFuneral_thumb_61fb55d46a4a69.40303058.jpg?itok=8N2jYeK0"
+                  alt="" class="card-img">
+                <div class="card-body bg-black text-white">
+                  <p>The Batman funeral scene</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="card border-0 bg-black h-100">
+                <img
+                  src="https://www.dc.com/sites/default/files/styles/video_playlists_thumb/public/video/Batman3Trailer_thumb_61ca541ab41692.74356134.jpg?itok=DmmQGrKO"
+                  alt="" class="card-img">
+                <div class="card-body bg-black text-white">
+                  <p>The Batman - The Bat and The Cat trailer</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row mt-2">
+            <div class="col-6">
+              <div class="card border-0 bg-black h-100">
+                <img
+                  src="https://www.dc.com/sites/default/files/styles/video_playlists_thumb/public/video/TheBatman_thumb_616def47f10564.48760584.jpg?itok=zGOMUHFD"
+                  alt="" class="card-img">
+                <div class="card-body bg-black text-white">
+                  <p>The Batman - Main Trailer</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="card border-0 bg-black h-100">
+                <img
+                  src="https://www.dc.com/sites/default/files/styles/video_playlists_thumb/public/video/thebatman_thumb_5f446fdb110844.32210871.jpg?itok=U-CQ4zYN"
+                  alt="" class="card-img">
+                <div class="card-body bg-black text-white">
+                  <p>The Batman - Official DC fanDome Teaser</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
     <section id="browse">
       <h1 class="text-uppercase text-primary">browse movies</h1>
       <div class="container-fluid container-xxl">
         <div class="row">
           <div id="filters" class="col-12 col-lg-2">
+            <h2>FILTERS</h2>
+            <div class="accordion accordion-flush" id="accordionFlushExample">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingOne">
+                  <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                    TITLES
+                  </button>
+                </h2>
+                <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
+                  data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate
+                    the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingTwo">
+                  <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                    CHARACTERS
+                  </button>
+                </h2>
+                <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
+                  data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate
+                    the <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine
+                    this being filled with some actual content.</div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingThree">
+                  <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                    TYPE
+                  </button>
+                </h2>
+                <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree"
+                  data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate
+                    the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more
+                    exciting happening here in terms of content, but just filling up the space to make it look, at least
+                    at first glance, a bit more representative of how this would look in a real-world application.</div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingThree">
+                  <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                    DATA RANGE
+                  </button>
+                </h2>
+                <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree"
+                  data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate
+                    the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more
+                    exciting happening here in terms of content, but just filling up the space to make it look, at least
+                    at first glance, a bit more representative of how this would look in a real-world application.</div>
+                </div>
+              </div>
+            </div>
             <div id="filters" class="d-grid gap-2 d-md-none">
               <button class="btn btn-secondary text-uppercase text-white">filters</button>
               <button class="btn btn-secondary text-uppercase text-white">newest to oldest</button>
@@ -338,13 +532,119 @@
   </main>
   <footer></footer>
 
+  <!-- MODALES -->
 
+  <!-- Vertically centered scrollable modal -->
+  <div class="modal fade" id="suicide">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1>The Suicide Scuad</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <img
+            src="https://www.dc.com/sites/default/files/Movies-PlaylistBG_TheSuicideSquad2021_610b7298c2a466.27495601.jpg"
+            alt="" class="w-100">
+          <h2>The Suicide Squad (2021)</h2>
+          <p>From writer/director James Gunn comes Warner Bros. Pictures’ superhero action adventure The Suicide Squad,
+            featuring a collection of the most degenerate delinquents in the DC lineup.</p>
+          <p>Welcome to hell—a.k.a. Belle Reve, the prison with the highest mortality rate in the US of A. Where the
+            worst Super-Villains are kept and where they will do anything to get out—even join the super-secret,
+            super-shady Task Force X. Today’s do-or-die assignment? Assemble a collection of cons, including Bloodsport,
+            Peacemaker, Captain Boomerang, Ratcatcher 2, Savant, King Shark, Blackguard, Javelin and everyone’s favorite
+            psycho, Harley Quinn. Then arm them heavily and drop them (literally) on the remote, enemy-infused island of
+            Corto Maltese. Trekking through a jungle teeming with militant adversaries and guerrilla forces at every
+            turn, the Squad is on a search-and-destroy mission with only Colonel Rick Flag on the ground to make them
+            behave…and Amanda Waller’s government techies in their ears, tracking their every movement. And as always,
+            one wrong move and they’re dead (whether at the hands of their opponents, a teammate, or Waller herself). If
+            anyone’s laying down bets, the smart money is against them—all of them.</p>
+          <p>The film stars Margot Robbie (Birds of Prey, Bombshell), Idris Elba (Avengers: Infinity War), John Cena
+            (upcoming HBO Max series Peacemaker, Bumblebee), Joel Kinnaman (Suicide Squad), Jai Courtney (the Divergent
+            franchise), Peter Capaldi (World War Z, BBC’s Doctor Who ), David Dastmalchian (upcoming Dune, Ant-Man and
+            the Wasp), Daniela Melchior (Parque Mayer), Michael Rooker (the Guardians of the Galaxy films), Alice Braga
+            (Elysium), Pete Davidson (The King of Staten Island, TV’s Saturday Night Live), Joaquín Cosio (Spider-Man:
+            Into the Spider-Verse, TV’s Narcos: Mexico), Juan Diego Botto (The Europeans), Storm Reid (The Invisible
+            Man, A Wrinkle in Time, Euphoria), Nathan Fillion (Guardians of the Galaxy, TV’s The Rookie), Steve Agee
+            (Brightburn, Guardians of the Galaxy Vol. 2), Sean Gunn (the Guardians of the Galaxy films, the Avengers
+            films), Mayling Ng (Wonder Woman), Flula Borg (Ralph Breaks the Internet), Jennifer Holland (Brightburn,
+            upcoming HBO Max series Peacemaker) and Tinashe Kajese (TV’s Valor, The Inspectors), with Sylvester Stallone
+            (the Rocky, Rambo and Expendables franchises), and Viola Davis (Ma Rainey’s Black Bottom, Suicide Squad).
+          </p>
+          <p>Gunn (the Guardian of the Galaxy films) directs from his own screenplay, based on characters from DC. The
+            film is produced by Charles Roven and Peter Safran, with Zack Snyder, Deborah Snyder, Walter Hamada, Chantal
+            Nong Vo, Nikolas Korda and Richard Suckle executive producing. Gunn’s creative team includes director of
+            photography Henry Braham (Guardians of the Galaxy Vol. 2), production designer Beth Mickle (Captain Marvel),
+            editors Fred Raskin (Guardians of the Galaxy Vol. 2, Once Upon a Time… In Hollywood) and Christian Wagner
+            (the Fast & Furious films) and Oscar-nominated costume designer Judianna Makovsky (Guardians of the Galaxy
+            Vol 2, Avengers: Endgame, Harry Potter and the Sorcerer’s Stone). The music is by John Murphy (Kick-Ass).
+          </p>
+        </div>
+        <div class="modal-footer">
+          <p>Warner Bros. Pictures Presents An Atlas Entertainment/Peter Safran Production, A James Gunn Film, The
+            Suicide Squad. </p>
+          <button class="btn btn-success">Comprar</button>
+          <button class="btn btn-primary">Compartir</button>
+        </div>
+      </div>
+    </div>
+  </div>
+<div class="modal fade" id="batman">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1>The Batman</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img
+              src="https://www.dc.com/sites/default/files/Movies-PlaylistBG_TheBatman_6185f4868026c0.73669633.jpg"
+              alt="" class="w-100">
+            <h2>The Batman (2022)</h2>
+            <p>From Warner Bros. Pictures comes Matt Reeves’ The Batman, starring Robert Pattinson in the dual role of Gotham City’s vigilante detective and his alter ego, reclusive billionaire Bruce Wayne.</p>
+            <p>Starring alongside Pattinson (Tenet, The Lighthouse) as Gotham’s famous and infamous cast of characters are Zoë Kravitz (Big Little Lies, Fantastic Beasts: The Crimes of Grindelwald) as Selina Kyle; Paul Dano (Love & Mercy, 12 Years a Slave) as Edward Nashton; Jeffrey Wright (No Time to Die, Westworld) as the GCPD’s James Gordon; John Turturro (the Transformers films, The Plot Against America) as Carmine Falcone; Peter Sarsgaard (The Magnificent Seven, Interrogation) as Gotham D.A. Gil Colson; Jayme Lawson (Farewell Amor) as mayoral candidate Bella Reál; with Andy Serkis (the Planet of the Apes films, Black Panther) as Alfred; and Colin Farrell (The Gentlemen, Fantastic Beasts and Where to Find Them) as Oswald Cobblepot.
+            </p>
+            <p>Reeves (the Planet of the Apes franchise) directed from a screenplay by Reeves & Peter Craig, based on characters from DC. Batman was created by Bob Kane with Bill Finger. Dylan Clark (the Planet of the Apes films) and Reeves produced the film, with Michael E. Uslan, Walter Hamada, Chantal Nong Vo and Simon Emanuel serving as executive producers.</p>
+            <p>The director’s behind-the-scenes creative team included Oscar-nominated director of photography Greig Fraser (Dune, Lion); Reeves’ Planet of the Apes production designer, James Chinlund, and editor, William Hoy; editor Tyler Nelson (Rememory); and Oscar-winning costume designer Jacqueline Durran (1917, Little Women, Anna Karenina). The music is by Oscar-winning composer Michael Giacchino (the current Spider-Man, Jurassic World and Star Wars films, Up).</p>
+          </div>
+          <div class="modal-footer">
+            <p>Warner Bros. Pictures Presents a 6th & Idaho/Dylan Clark Productions Production, a Matt Reeves Film, The Batman. The film is set to open in theaters March 4, 2022 and will be distributed worldwide by Warner Bros. Pictures. </p>
+            <button class="btn btn-success">Comprar</button>
+            <button class="btn btn-primary">Compartir</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
-    crossorigin="anonymous"></script>
+    <div class="modal fade" id="green">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1>Green Lantern</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img
+              src="https://www.dc.com/sites/default/files/styles/recent_activity_lrg_horizontal/public/field/image/GLBMP_blog_63589d36d59677.98456687.jpg?itok=_YVzF-cx"
+              alt="" class="w-100">
+            <h2>Green Lantern: Beware My Power (2022)</h2>
+            <p>In Green Lantern: Beware My Power, recently discharged Marine sniper John Stewart is at a crossroads in his life, one which is only complicated by receiving an extraterrestrial ring which grants him the powers of the Green Lantern of Earth. Unfortunately, the ring doesn’t come with instructions—but it does come with baggage, like a horde of interplanetary killers bent on eliminating every Green Lantern in the universe. Now, with the aid of the light-hearted Green Arrow, Adam Strange and Hawkgirl, this reluctant soldier must journey into the heart of a galactic Rann/Thanagar war and somehow succeed where all other Green Lanterns have failed.</p>
+            
+          </div>
+          <div class="modal-footer">
+            <p> </p>
+            <button class="btn btn-success">Comprar</button>
+            <button class="btn btn-primary">Compartir</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+      <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+      <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>

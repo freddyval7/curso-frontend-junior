@@ -1,0 +1,57 @@
+body {
+    background-color: #F0F2F5;
+}
+
+#searchIcon, #comment {
+    background-color: #F0F2F5;
+}
+
+.seleccionada{
+    border-bottom: 3px solid #0D6EFD;
+    color: #0D6EFD;
+}
+
+.error{
+    border: 2px solid red;
+}
+
+/* Para el carousel */
+
+.card-carousel{
+    margin: 0 .2em;
+    width: 150px;
+    height: 300px;
+    cursor: pointer;
+}
+
+.card-carousel img{
+    height: 100%;
+}
+
+
+.carousel-inner{
+    display:flex;
+    padding: 1em;
+}
+
+.carousel-item{
+    display: block;
+    margin-right: 0;
+    flex: 0 0 0 0 calc(100%/5);
+}
+
+/* Fin carousel */
+
+@media screen and (max-width: 768px) {
+    #nav {
+        width: 100% !important;
+    }
+
+    #center {
+        font-size: small;
+    }
+
+    #card-main{
+        margin-top: 50px;
+    }
+}

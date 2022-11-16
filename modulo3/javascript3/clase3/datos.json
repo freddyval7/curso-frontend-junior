@@ -1,0 +1,45 @@
+{
+    "nombre": "jose l rojas d",
+    "correo": "joselrojas@cadif1.com",
+    "fechaNacimiento": {
+        "dia": 11,
+        "mes": 1,
+        "año": 80
+    },
+    "titulos": [
+        {
+            "nombre": "Bachiller en Ciencias",
+            "año": 1994,
+            "institucion": {
+                "nombre": "Bujanda",
+                "pais": "Venezuela"
+            }
+        },
+        {
+            "nombre": "Ing. en Informatica",
+            "año": 2004,
+            "institucion": {
+                "nombre": "UCLA",
+                "pais": "Venezuela"
+            }
+        },
+        {
+            "nombre": "Msc Ciencias de la Computacion",
+            "año": 2013,
+            "institucion": {
+                "nombre": "UCLA",
+                "pais": "Venezuela"
+            }
+        }
+    ],
+    "hijos": [
+        {
+            "nombre": "luisito",
+            "edad": 2
+        },
+        {
+            "nombre": "blanca",
+            "edad": 6
+        }
+    ]
+}
