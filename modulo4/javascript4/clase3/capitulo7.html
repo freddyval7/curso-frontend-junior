@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Practicando AJAX con funciones jQuery de alto nivel</title>
+</head>
+<body>
+    <div id="error" style="background-color: red;color:white;display: none">
+        Error ....
+    </div>
+   
+    <button id="cargar-contenido">
+        Cargar con Load
+    </button>
+    <h2>Areas de estudio</h2>
+    <ol id="areas">
+
+    </ol>
+    <div id="div-cursos" style="display:none">
+        <img id="loading" src="loading.gif" width="50" style="display: none"/>
+        <h3>Listado de cursos de "<span id="nombre-area"></span>"</h3>
+        <ol id="cursos" >
+
+        </ol>
+    </div>
+    <div id="contenido">
+
+    </div>
+    
+    <script src="../jquery-3.6.1.min.js"></script>
+    <script>
+        var apikey = "";
+
+        $("#loading").ajaxStart(function(){
+            //$(this).show()
+        }).ajaxStop(function(){
+            //$(this).hide()
+        })
+
+        $(document).ready(()=>{
+            $("#cargar-contenido").click(()=>{
+                // $.getScript("",function(){
+                //     saludar();
+                // }).fail(()=>{
+                //     console.log("error al cargar la libreria...")
+                // })
+                
+                $("#contenido").load("capitulo7-a.html")
+            })
+
+            let url = "https://api.cadif1.com/areadeestudio?apikey="+apikey;
+            $.getJSON(url,function(datos){
+                $("#error").hide()
+                console.log(datos);
+                for (i=0;i<datos.areas.length;i++)
+                    $("#areas").append(`<li id="${datos.areas[i].id}" class="area-estudio"
+                        name="${datos.areas[i].nombre}">
+                        ${datos.areas[i].nombre} 
+                        (${datos.areas[i].nromaterias})</li>`)
+
+                $(".area-estudio").click(function(){
+                    $("#loading").show();
+                    console.log(this)
+                    $("#nombre-area").text($(this).attr("name"))
+                    $.getJSON("https://api.cadif1.com/curso/de_un_area/"+this.id,
+                        function(datos){
+                            if (datos.cursos.length == 0){
+                                $("#div-cursos").hide();
+                                $("·error").text("El area seleccionada no tiene cursos")
+                                $("·error").show()
+                            }else{
+                                $("#cursos").empty();
+                                
+                                
+                                for (let i=0;i<datos.cursos.length;i++)
+                                    $("#cursos").append(`<li>${datos.cursos[i].nombre}</li>`)
+
+                                $("#div-cursos").show();
+                                $("·error").hide()
+                            }
+                        }
+                    ).fail(()=>{
+                        // se ejecuta si hay error
+                    })
+                    .always(()=>{
+                        // se ejecuta siempre
+                        $("#loading").hide()
+                    })
+                })
+            }).fail(()=>{
+                console.log("error")
+                $("#error").show()
+            })
+            
+        })
+        
+    </script>
+</body>
+</html>

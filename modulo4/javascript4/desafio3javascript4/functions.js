@@ -1,0 +1,15 @@
+$(document).ready(()=>{
+    $("#content").load("secciones.html")
+    $("#principal").click(function(){
+        $("#content").load("secciones.html")
+    })
+    $("#cursos").click(function(){
+        $("#content").load("cursos.html")
+    })
+    $("#carreras").click(function(){
+        $("#content").load("carreras.html")
+    })
+    $("#registro").click(function(){
+        $("#content").load("registro.html")
+    })
+})

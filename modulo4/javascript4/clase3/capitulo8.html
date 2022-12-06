@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Practicando formularios</title>
+</head>
+<body>
+    <h1>Formularios con AJAX y jQuery</h1>
+    <form id="formdatos" >
+        Nombre 
+        <input name="name" type="text" /> <br>
+        Trabajo
+        <input name="job" type="text" /><br><br>
+        <input id="btn-registrar" value="Registrar" type="button" />
+    </form>
+    <script src="../jquery-3.6.1.min.js"></script>
+    <script>
+        $(document).ready(()=>{
+
+            $("#btn-registrar").click(()=>{
+                console.log($("#form-datos").serialize())
+                console.log($("#form-datos").serializeArray())
+
+                if (!todoValido())
+                    alert("Datos invalidos")
+                else
+                    $.post("https://reqres.in/api/users/",$("#formdatos").serialize(),function(resp){
+                        console.log(resp)
+                        alert("Se registro exitosamente con el id: "+resp.id)
+                        $("#formdatos")[0].reset()
+                    }).fail(()=>{
+
+                    })
+                    // formas alternativas de datos enviados
+                    /*
+                    $.post("https://reqres.in/api/users/",
+                        {
+                            "name":document.formdatos.name.value,
+                            "job":document.formdatos.job.value
+                        },function(){
+
+                        }
+                    )
+                    let objeto2 = {
+                        "name":document.formdatos.name.value,
+                        "job":document.formdatos.job.value
+                    }
+                    $.post("https://reqres.in/api/users/",objeto2,function(){
+
+                        }
+                    )
+                    let objeto3 = new Object();
+                    objeto3.name=document.formdatos.name.value;
+                    objeto3.job=document.formdatos.job.value;
+
+                    $.post("https://reqres.in/api/users/",objeto3,function(){
+
+                        }
+                    )
+                    */
+            })
+
+        })
+
+        function todoValido(){
+            return true;
+        }
+    </script>
+</body>
+</html>

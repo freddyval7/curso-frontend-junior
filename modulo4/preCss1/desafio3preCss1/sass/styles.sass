@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap')
+@import "./header"
+
+//Fuentes
+$font-stack: 'Roboto Condensed', sans-serif
+
+//MAPAS
+
+$coloresImpar: ("naranja": #E67E22,"negro": #3E3B3A)
+$coloresPar:("rojo": #E74C3C,"gris": #566573)
+
+//FIN MAPAS
+
+//MIXINS
+
+@mixin titulo
+    color: map-get($coloresImpar, "naranja")
+    font-size: 8em
+    font-weight: bolder
+    margin: 0
+    line-height: 1em
+
+@mixin rellenoCard
+    padding: 2em
+    color: white
+    display: flex
+    flex-direction: column
+
+    
+
+body
+    margin: 0
+    font-size: 16px
+    font-family: $font-stack
+    line-height: 1.5em
+
+// HEADER
+
+.header 
+    height: 75px
+    & img
+        width: 75px
+        height: 50px
+        margin-left: 2em
+
+
+// Sections
+
+// SECTION 1
+#section1
+    background-image: url("../img/worker.webp")
+    background-position: center
+    background-repeat: no-repeat
+    background-size: cover
+    height: 100vh
+    padding: 3em
+    display: flex
+    flex-direction: column
+
+.card
+    width: 35%
+    height: 100%
+    display: flex
+    flex-direction: column
+    justify-content: center
+
+.card__h1
+    @include titulo
+
+.card__p
+    font-style: italic
+
+.form
+    width: 100%
+    display: flex
+    &__input
+        width: 70%
+        height: 2.5em
+        border: none
+        padding-left: 1em
+    &__submit
+        width: 30%
+        color: white
+        background: rgb(230,126,34)
+        background: linear-gradient(93deg, rgba(230,126,34,1) 0%, rgba(231,76,60,1) 100%)
+        border: none
+        cursor: pointer
+        &:hover
+            background: rgb(231,76,60)
+            transition: 0.5s ease
+            
+            
+        
+
+// SECTION 2
+
+#section2
+    display: flex
+    padding: 5em
+
+@for $i from 1 through 4
+    @if ($i % 2) == 0
+        @if $i == 2
+            .card2:nth-child(#{$i})
+                background-color: map-get($coloresPar, "rojo")
+        @if $i == 4
+            .card2:nth-child(#{$i})
+                background-color: map-get($coloresPar, "gris")
+    @else 
+        @if $i == 1
+            .card2:nth-child(#{$i})
+                background-color: map-get($coloresImpar, "naranja")
+        @if $i == 3
+            .card2:nth-child(#{$i})
+                background-color: map-get($coloresImpar, "negro")
+
+.card2
+    @include rellenoCard
+
+.card2__h2
+    margin: 0
+    margin-bottom: 0.5em
+    font-size: 4em
+    font-weight: bolder
+
+.card2__h3
+    margin-bottom: 0
+
+.card2__p
+    margin-bottom: 1.5em
+
+
+
+         
+    

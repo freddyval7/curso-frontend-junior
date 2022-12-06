@@ -1,0 +1,47 @@
+
+// SECTION BANNER SEGUNDO CON SASS
+
+#banner2
+    height: 850px
+   
+.container
+    display: grid
+    grid-template-columns: repeat(2,1fr)
+    grid-template-rows: repeat(50%,50%)
+    gap: 5em
+    padding: 10em
+    padding-top: 15em
+    & > .container__card
+        display: flex
+        & img
+            width: 30%
+            max-height: 10em
+            object-fit: fill
+            border-radius: 15%
+        & > .card__div
+            width: 70%
+            margin-left: 1.5em
+            display: flex
+            flex-direction: column
+            & > .div__h3
+                margin: 0
+                font-weight: normal
+            & > .div__h2
+                margin: 0.5em 0
+                font-weight: bolder
+            & > .div__p--white
+                margin: 0
+                color: #212F3D
+
+    & > .container__card1
+        grid-column: 1/2
+        grid-row: 1/2
+    & > .container__card2
+        grid-column: 2/3
+        grid-row: 1/2
+    & > .container__card3
+        grid-column: 1/2
+        grid-row: 2/3
+    & > .container__card4
+        grid-column: 2/3
+        grid-row: 2/3

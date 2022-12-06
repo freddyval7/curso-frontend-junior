@@ -1,0 +1,12 @@
+
+.btnDelgado{
+  border-radius: 18px;
+  background-color: $colorPrimario;
+  color: $colorSecundario;
+
+  &:hover{
+    cursor: pointer;
+    padding: 3px;
+    border: $colorPrimario solid 1px;
+  }
+}

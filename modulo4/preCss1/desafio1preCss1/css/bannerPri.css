@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+body {
+  margin: 0;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  line-height: 2em;
+}
+
+#banner1 {
+  background-image: url(../imgs/img1.jpeg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 850px;
+}
+
+.nav {
+  height: 70px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 3em;
+}
+.nav > .nav__logo {
+  height: 80%;
+}
+.nav > .nav__logo img {
+  height: 100%;
+}
+.nav > .nav__links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.nav > .nav__links > .nav__link {
+  color: black;
+  text-decoration: none;
+  margin-right: 20px;
+}
+.nav > .nav__links > .nav__link:hover {
+  color: #76D7C4;
+}
+
+.card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 12em 5em;
+  padding-bottom: 0;
+}
+.card > .card__h1--white {
+  font-size: 80px;
+  color: white;
+  margin-bottom: 0;
+}
+.card > .card__p--white {
+  margin: 5rem 0;
+  margin-top: 3rem;
+  width: 50%;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+}
+.card > .card-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.card > .card-div .div__button {
+  font-size: 1em;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  padding: 0.8em 3.5em;
+  border: none;
+  border-radius: 16px;
+  background-color: #76D7C4;
+}
+.card > .card-div .div__button:hover {
+  -webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+          box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+}
+.card > .card-div .div__button:first-child {
+  margin-right: 25px;
+}
+.card > .card-div .div__button--white {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: white;
+  color: #212F3D;
+}

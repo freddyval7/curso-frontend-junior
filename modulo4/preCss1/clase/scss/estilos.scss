@@ -1,0 +1,227 @@
+//Colores del sitio
+// $colorPrimario: #00439C;
+// $colorSecundario: white;
+// $colorTerciario: black;
+// $colorCuarto: #dc3500;
+
+//Fuentes del sitio
+$fuentePrincipal: Arial;
+$fuenteSecundaria: 'Segoe UI';
+//Alturas
+$alturaTexto18: 18px;
+$alturaVisualizadorEjemplo: 300px;
+//Tamaños de fuente del sitio
+// $fontSizeNormal: 16px;
+// $fontSizePequeno: 10px;
+// $fontSizeGrande: 24px;
+//Variable de control de estilo
+$paleta1 : "Play";
+$paleta2 : "Comida";
+$paleta3 : "Mercado";
+
+$type : "Play";
+
+//Mapas
+//Mapa de colores del sitio
+$colores: (
+  "colorPrimario": #00439C,
+  "colorSecundario": white,
+  "colorTerciario": black,
+  "colorCuarto": #dc3500
+);
+$colors:(
+  "primary": #00439C,
+  "secondary": white,
+  "terciary": black,
+  "cuartary": #dc3500
+);
+//Ejemplo del map-merge
+$coloresAdicionales:(
+  "colorA": yellow,
+  "colorB": pink
+);
+$coloresAdicionales: map-merge($map1: $colores, $map2: $coloresAdicionales);
+//Alineaciones
+$alineaciones: (
+  "normal": block,
+  "lineal": inline,
+  "combinada": inline-block,
+  "flexible": flex,
+  "grilla": grid
+);
+//Tamaños de Fuente
+$fontSizes:(
+  "fontSizePequeno": 10px,
+  "fontSizeNormal": 16px,
+  "fontSizeGrande": 24px 
+);
+
+/////FIN DE LOS MAPAS
+
+//MIXINS
+//MIXINS SENCILLOS
+@mixin btnDelgado{
+  border-radius: 18px;
+  background-color: map-get($map: $coloresAdicionales, $key: "colorPrimario");
+  color: map-get($map: $coloresAdicionales, $key: "colorSecundario");
+  padding: 0 10px;
+  &:hover{
+    cursor: pointer;
+    padding: 0 10px;
+    border: map-get($map: $coloresAdicionales, $key: "colorPrimario") solid 1px;
+  }
+}
+
+
+
+///FIN DE LOS MIXINS SENCILLOS
+
+
+
+
+///FIN DE LOS MIXINS
+//Importaciones
+// @import 'imports/buttonsDelgados';
+
+
+//Clase para colocar a elementos para visualizar
+.visualizer{
+  height: $alturaVisualizadorEjemplo;
+}
+
+//Ejemplo de interpolacion
+.pInterpolada{
+
+  &::before{
+    content: "Este es contenido desde SASS ";
+  }
+  &::after{
+    content: "Tengo #{30 + 4} años"
+  }
+
+}
+
+//Regla general de Background
+// .bg{
+//   background-color: transparent;
+
+//   &-primary{
+//     @extend .bg;
+//     @if($type == $paleta1){
+//       background-color: map-get($map: $coloresAdicionales, $key: "colorPrimario");
+//     } @else if($type == $paleta2){
+//       background-color: map-get($map: $colores, $key: "colorSecundario");
+//     } @else if($type == $paleta3){
+//       background-color: map-get($map: $colores, $key: "colorCuarto");
+//     }
+//   }
+//   &-secondary{
+//     @extend .bg;
+//     background-color: map-get($map: $colores, $key: "colorSecundario");
+//   }
+//   &-success{
+//     @extend .bg;
+//     background-color: map-get($map: $colores, $key: "colorTerciario");
+//   }
+//   &-red{
+//     @extend .bg;
+//     background-color: map-get($map: $colores, $key: "colorCuarto");
+//   }
+// }
+
+.bg{
+  background-color: transparent;
+  $k: 1;
+  $keysColor: map-keys($map: $colors);
+  $valuesColor: map-values($map: $colors);
+  @while $k < 5 {
+    &-#{nth($keysColor, $k)}{
+      background-color: #{nth($valuesColor, $k)};
+    }
+    $k: $k + 1;
+  }
+}
+
+
+//Regla general de botones
+.botonRojo{
+  border-radius: $alturaTexto18;
+  background-color: map-get($map: $colores, $key: "colorCuarto");
+  color: map-get($map: $colores, $key: "colorSecundario");
+
+  
+  &--relleno{
+    @extend .botonRojo;
+    padding: 5px 20px;
+  }
+
+  &-circular{
+    @extend .botonRojo;
+    border-radius: $alturaTexto18 * 3;
+    height: 70px;
+  }
+  
+  &:hover{
+    background-color: transparent;
+    color: black;
+  }
+}
+
+
+
+//ESTILOS PARA LA MAQUETA
+
+//BODY  
+body{
+  margin: 0;
+}
+
+//HEADER
+@import 'imports/header';
+@for $i from 1 through 2{
+  .header > div:nth-child(#{$i}){
+    display: map-get($map: $alineaciones, $key: "flexible");
+    width: 50%;
+    @if($i == 1){
+      > nav{
+        width: 90%;
+        display: map-get($map: $alineaciones, $key: "flexible");
+        ul{
+          width: 90%;
+          display: map-get($map: $alineaciones, $key: "flexible");
+          justify-content: space-around;
+          list-style: none;
+          $j: 1;
+          @each $fSize in map-values($map: $fontSizes){
+            > li:nth-child(#{$j}){
+              font-size: $fSize;
+            }
+          $j: $j + 1;
+          }
+        }
+      }
+    }
+    @if($i == 2){
+      justify-content: flex-end;
+      > div:first-child{
+        @include btnDelgado();
+        margin-right: 15px;
+      }
+    }
+  }
+}
+
+/////FIN DEL HEADER
+
+//MAIN
+
+
+
+
+// FOOTER
+
+
+
+
+
+//FIN DE ESTILOS PARA LA MAQUETA

@@ -180,7 +180,6 @@ function contador() {
     let z = 0
 
     timer = setInterval(()=>{
-        z++;
         n++;
         //Se obtiene la hora, minuto y segundo actual para restarlo por si mismo y restablecerlo
         var fechaActual = new Date();
@@ -212,8 +211,6 @@ function contador() {
         if (horas < 10) { horas = '0' + horas; }
         if (minutos < 10) { minutos = '0' + minutos; }
         if (segundos < 10) { segundos = '0' + segundos; }
-
-        // tiempo = z;
 
         $("#tiempo").text(`${horas}:${minutos}:${segundos}`)
     },1000)

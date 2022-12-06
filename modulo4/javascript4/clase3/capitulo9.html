@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Practicando promesas</title>
+</head>
+<body>
+    <h1>
+        Practica usando Swal
+    </h1>
+    <button id="btn-guardar">Guardar</button>
+    <button id="btn-eliminar">Eliminar</button>
+
+    <script src="../jquery-3.6.1.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        $(document).ready(()=>{
+            $("#btn-guardar").click(()=>{
+
+                Swal.fire({
+                    allowOutsideClick:false,
+                    icon: 'success',
+                    showCloseButton: true,
+                    title: 'Felicitaciones',
+                    text: "Se guardo exitosamente!!",
+                    showConfirmButton: true,
+                }).then(()=>{
+                    // cuando la promesa se cumpla, es decir, cuando se cierra la ventana
+                    console.log("cuando se cierra la ventana...")
+                    Swal.fire({
+                        position: 'top-end',
+                        toast: true,
+                        icon: 'info',
+                        //titleText: "otro text",
+                        title: 'Alerta',
+                        text: "Esto fue ejecutado al cumplirse la promesa",
+                        showConfirmButton: false,
+                        timer: 5000
+                    })
+                }).catch(()=>{
+
+                })
+                console.log("sincrono...")
+            })
+
+            $("#btn-eliminar").click(()=>{
+                Swal.fire({
+                    title: '¿Esta seguro que desea eliminar?',
+                    showDenyButton: true,
+                    showCancelButton: true,
+                    confirmButtonText: 'Si',
+                    denyButtonText: `No`,
+                    confirmButtonColor: "blue",
+                    cancelButtonText: "Cancelar",
+                    allowOutsideClick:false,
+                    icon: "question"
+                    }).then((result) => {
+                        /* Read more about isConfirmed, isDenied below */
+                        if (result.isConfirmed) {
+                            Swal.fire('Se elimino exitosamente!', '', 'success')
+                        } else if (result.isDenied) {
+                            Swal.fire('No hubo cambios', '', 'info')
+                    }
+                })
+            })
+        })    
+    </script>
+</body>
+</html>

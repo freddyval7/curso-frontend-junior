@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section>
+        <h1 class="h1">Secciones</h1>
+        <ol class="listSecciones" id="listSecciones"></ol>
+        <div class="error">
+            <h1 class="error__h1"></h1>
+        </div>
+    </section>
+
+    <script src="./jquery-3.6.1.min.js"></script>
+    <script>
+        $(document).ready(()=>{
+            $.getJSON("https://api.cadif1.com/seccion",function(resp){
+                console.log(resp)
+                $("#listSecciones").show();
+                for(i=0;i<resp.length;i++){
+                    $("#listSecciones").append(`<li>${resp[i].materia} (${resp[i].nivel})</li>`)
+                }
+            }).fail(()=>{
+                $(".error__h1").text("Ocurrió un error...");
+                $("#listSecciones").hide();
+            }).always(()=>{
+                console.log("Se completó la solicitud")
+            })
+        })
+    </script>
+</body>
+</html>
+

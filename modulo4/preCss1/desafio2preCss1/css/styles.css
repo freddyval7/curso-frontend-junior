@@ -1,0 +1,166 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400&display=swap");
+body {
+  font-family: "Roboto Condensed", sans-serif;
+  margin: 0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  padding: 0 2em;
+}
+.header ul {
+  display: flex;
+  justify-content: space-around;
+  width: 30em;
+}
+.header ul li {
+  list-style: none;
+}
+
+.ul__li:hover {
+  color: #D776BA;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.card__h3 {
+  color: #D776BA;
+  font-size: 2em;
+  margin: 0;
+  margin-top: 0.5em;
+}
+
+#section1 {
+  width: 100%;
+  height: 45em;
+}
+#section1 > div {
+  width: 100%;
+  height: 100%;
+}
+
+.card {
+  position: absolute;
+}
+.card:first-child {
+  top: 5em;
+  left: 1em;
+  width: 45%;
+  height: 35em;
+}
+.card:first-child img {
+  width: 80%;
+  height: 100%;
+}
+@media screen and (min-width: 1300px) {
+  .card:first-child {
+    left: 15em;
+  }
+}
+.card:nth-child(2) {
+  z-index: -1;
+  top: 15em;
+  left: 5em;
+  width: 35%;
+  height: 30em;
+  background: rgb(215, 118, 186);
+  background: linear-gradient(215deg, rgb(215, 118, 186) 0%, rgb(244, 208, 63) 100%);
+}
+@media screen and (min-width: 1300px) {
+  .card:nth-child(2) {
+    left: 20em;
+  }
+}
+.card:nth-child(3) {
+  width: 41%;
+  right: 5em;
+  top: 8em;
+}
+.card:nth-child(3) > .card__h1 {
+  color: #3498DB;
+  font-size: 5em;
+  font-weight: bolder;
+  margin: 0.2em 0;
+}
+.card:nth-child(3) > .card__span {
+  font-weight: bold;
+}
+@media screen and (min-width: 1300px) {
+  .card:nth-child(3) {
+    right: -2em;
+  }
+}
+
+.card2 {
+  top: 28em;
+  right: 3em;
+  display: flex;
+  width: 50em;
+  height: 15em;
+}
+@media screen and (min-width: 1300px) {
+  .card2 {
+    right: 10em;
+  }
+}
+.card2 .card__div, .card2 .card__div--blue, .card2 .card__div--pink, .card2 .card__div--yellow {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #48C9B0;
+  color: white;
+  font-weight: bold;
+  font-size: 2em;
+  width: 100%;
+}
+.card2 .card__div:hover, .card2 .card__div--blue:hover, .card2 .card__div--pink:hover, .card2 .card__div--yellow:hover {
+  transition: 0.7s ease;
+  cursor: pointer;
+  transform: scale(1.07);
+}
+.card2 .card__div--yellow {
+  background-color: #F4D03F;
+}
+.card2 .card__div--pink {
+  background-color: #D776BA;
+}
+.card2 .card__div--blue {
+  background-color: #3498DB;
+}
+.card2 .card__div span, .card2 .card__div--yellow span, .card2 .card__div--pink span, .card2 .card__div--blue span {
+  margin-top: 0.5em;
+}
+
+#section2 {
+  background-color: #48C9B0;
+  padding: 5em;
+}
+
+.card__span--white {
+  color: white;
+  font-weight: bold;
+  font-size: 2em;
+}
+
+.card__div, .card2 .card__div--yellow, .card2 .card__div--pink, .card2 .card__div--blue {
+  display: flex;
+  margin-top: 2em;
+}
+.card__div > div, .card2 .card__div--yellow > div, .card2 .card__div--pink > div, .card2 .card__div--blue > div {
+  width: 10em;
+  border-top: 1px solid white;
+  margin-right: 1.5em;
+}
+
+.div__p {
+  line-height: 1.5em;
+  width: 90%;
+  color: white;
+  margin: 0;
+}
+
+/*# sourceMappingURL=styles.css.map */

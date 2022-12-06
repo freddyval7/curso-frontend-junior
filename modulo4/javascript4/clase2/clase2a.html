@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica Capitulo 5</title>
+</head>
+<body>
+    Ejemplos de uso de AJAX
+    <form action="https://google.com/search">
+        <input name="q" type="text" /><button>Buscar</button>
+    </form>
+    <hr>
+    <input id="pelicula" type="text" />
+    <button id="btn-listado-xml">Buscar pelicula con XMLHTTPRequest</button>
+    <button id="btn-listado-jq">Buscar pelicula con jQuery</button>
+    <div id="mensaje"></div>
+    <ol id="lista">
+
+    </ol>
+    <script src="jquery-3.6.1.min.js"></script>
+    <script>
+        let urlBase = "https://www.omdbapi.com?apikey=7a711b58&type=movie&s=";
+
+        $("#btn-listado-xml").click(()=>{
+            let ajax = new XMLHttpRequest();
+
+            ajax.onreadystatechange = function(){
+               console.log(this.readyState)
+               console.log(this.status) 
+
+               // readyState 4 significa que ya llego toda la respuesta del backend
+               if (this.readyState == 4){
+                    let respuesta
+                    try{
+                        respuesta = JSON.parse(this.responseText);
+                        
+                         // status 200 significa que todo esta ok
+                        if (this.status==200){
+                            //console.log(this.responseText)
+                            console.log(respuesta.Search)
+                            mostrarResultados(respuesta)
+                        }else{
+                            console.log("Ocurrio un error en la peticion: "+respuesta.Error)
+                            $("#mensaje").text("Ocurrio un error en la peticion")
+                        }
+                    }catch(x){
+                        console.log("error al procesar los datos")
+                        $("#mensaje").text("error al procesar los datos")
+                    }
+               }
+            }
+
+            ajax.open("GET",urlBase+$("#pelicula").val())
+            ajax.send()
+        })
+
+
+        $("#btn-listado-jq").click(()=>{
+            $.ajax({
+                url: urlBase+$("#pelicula").val(),
+                type: "GET",
+                dataType: "JSON",
+                success: function(respuesta){
+                    console.log("todo ok")
+                    mostrarResultados(respuesta)
+                },
+                error: function(error){
+                    console.log("error ")
+                    console.log(error)
+                    if (error.responseJSON)
+                        $("#mensaje").text("Ocurrio un error en la peticion. La respuesta fue: "+error.responseJSON.Error)
+                    else
+                        $("#mensaje").text("Ocurrio un error en la peticion.")
+                }
+            })
+        })
+
+        function mostrarResultados(respuesta){
+            if (respuesta.Search){
+                $("#lista").empty()
+                $("#lista").show();
+                for (i=0;i<respuesta.Search.length;i++){
+                    if (respuesta.Search[i].Poster == "N/A")
+                        $("#lista").append(`<li>${respuesta.Search[i].Title} ${respuesta.Search[i].Year}</li>`)
+                    else
+                        $("#lista").append("<li><img width='100px' height='100px' src='"+
+                            respuesta.Search[i].Poster+"' /></li>")
+                }
+                $("#mensaje").text('Resultados: '+respuesta.totalResults)
+                console.log(respuesta.totalResults)
+            }else{
+                $("#mensaje").text('La busqueda no genera resultados..')
+                console.log('La busqueda no genera resultados..')
+                $("#lista").hide()
+            }
+        }
+    </script>
+</body>
+</html>
+
